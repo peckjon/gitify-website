@@ -12,9 +12,9 @@ const FooterWrapper = styled.div`
 export const Footer = () => {
   return (
     <FooterWrapper className="container-fluid bg-light py-4 mt-5 text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col d-flex justify-content-between">
+      <div className="container">
+        <div className="row">
+          <div className="col d-flex justify-content-between">
             <span>
               Copyright © <a href="https://www.gitify.io/">Gitify</a>{' '}
               {new Date().getFullYear()}.
