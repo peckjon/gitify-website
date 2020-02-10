@@ -36,7 +36,7 @@ const ReleaseDetails = styled.div`
 const API_REPO_URL =
   'https://api.github.com/repos/manosim/gitify/releases/latest';
 
-export const Header = ({ siteTitle }) => {
+export const Header = () => {
   const [downloadURL, setDownloadURL] = useState(null);
   const [version, setVersion] = useState(null);
   const [releaseDate, setReleaseDate] = useState(null);
@@ -55,7 +55,7 @@ export const Header = ({ siteTitle }) => {
   }, []);
 
   return (
-    <Container className="container-fluid py-3 px-2 mb-5 bg-primary text-primary">
+    <Container className="container-fluid py-5 px-2 mb-5 text-primary">
       <div className="container">
         <div className="row">
           <div className="col-md-6 d-flex flex-column justify-content-center">
