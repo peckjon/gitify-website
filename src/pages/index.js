@@ -11,6 +11,50 @@ const SectionMain = styled.div`
   justify-content: center;
 `;
 
+const LogosList = styled.ul`
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const LogosListItem = styled.li`
+  border: 0;
+  border-radius: 0;
+  padding: 0.5rem 0.75rem;
+  margin: 1rem 0.25rem;
+
+  .img-fluid {
+    width: 4rem;
+  }
+`;
+
+const openSourceLibs = [
+  {
+    name: 'React JS',
+    link: 'https://reactjs.org/',
+    image: '/images/logos/react.png',
+  },
+  {
+    name: 'Redux',
+    link: 'https://redux.js.org/',
+    image: '/images/logos/redux.png',
+  },
+  {
+    name: 'Typescript',
+    link: 'https://www.typescriptlang.org/',
+    image: '/images/logos/typescript.png',
+  },
+  {
+    name: 'GitHub',
+    link: 'https://www.github.com/',
+    image: '/images/logos/github.png',
+  },
+  {
+    name: 'Jest',
+    link: 'https://jestjs.io/',
+    image: '/images/logos/jest.png',
+  },
+];
+
 const IndexPage = () => (
   <Layout>
     <SEO title="GitHub Notifications on your menu bar" />
@@ -112,11 +156,15 @@ const IndexPage = () => (
         </SectionMain>
 
         <div className="col-md-4 col-md-offset-1">
-          <img
-            className="img-fluid screenshot"
-            src="/images/open-source.png"
-            alt="Open Source - Electron, Node JS, React, Redux, GitHub."
-          />
+          <LogosList className="list-group list-group-horizontal">
+            {openSourceLibs.map((item, index) => (
+              <LogosListItem key={index} className="list-group-item">
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <img className="img-fluid" src={item.image} alt={item.name} />
+                </a>
+              </LogosListItem>
+            ))}
+          </LogosList>
         </div>
       </div>
     </div>

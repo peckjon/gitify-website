@@ -21,7 +21,6 @@ const SiteDesc = styled.h4`
 const ReleaseDetails = styled.div`
   margin-top: 1.5rem;
   font-size: 0.8rem;
-  text-align: center;
 `;
 
 const API_REPO_URL =

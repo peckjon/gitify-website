@@ -21,11 +21,11 @@ const Layout = ({ children }) => {
 
       {children}
 
-      <div className="container-fluid bg-light py-3 mt-5 text-center">
+      <div className="container-fluid bg-light py-4 mt-5 text-center">
         <div className="row">
-          <div className="col-12">
-            Copyright{' '}
-            <a href="https://www.gitify.io/">{data.site.siteMetadata.title}</a>©{' '}
+          <div className="col">
+            Copyright ©{' '}
+            <a href="https://www.gitify.io/">{data.site.siteMetadata.title}</a>{' '}
             {new Date().getFullYear()}.
           </div>
         </div>
