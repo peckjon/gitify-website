@@ -64,19 +64,21 @@ export const Header = ({ siteTitle }) => {
               GitHub Notifications <br /> on your menu bar.
             </SiteDesc>
 
-            <ReleaseDetails>
-              <a
-                className="btn btn-success mb-3 px-3 py-2"
-                id="download-apple"
-                href={downloadURL}
-              >
-                <Octicon icon={CloudDownload} /> Mac OSX
-              </a>
-              <div>
-                <div>Current Version: {version}.</div>
-                <div>Released on {releaseDate}.</div>
-              </div>
-            </ReleaseDetails>
+            {version && (
+              <ReleaseDetails>
+                <a
+                  className="btn btn-success mb-3 px-3 py-2"
+                  id="download-apple"
+                  href={downloadURL}
+                >
+                  <Octicon icon={CloudDownload} /> Mac OSX
+                </a>
+                <div>
+                  <div>Current Version: {version}.</div>
+                  <div>Released on {releaseDate}.</div>
+                </div>
+              </ReleaseDetails>
+            )}
           </div>
 
           <div className="col-md-6 d-flex flex-column justify-content-center">

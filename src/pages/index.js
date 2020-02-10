@@ -1,8 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import { Header } from '../components/header';
 import SEO from '../components/seo';
+
+const SectionMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const IndexPage = () => (
   <Layout>
@@ -12,7 +19,7 @@ const IndexPage = () => (
 
     <div className="section container px-3 py-5">
       <div className="row">
-        <div className="col-md-7">
+        <SectionMain className="col-md-7">
           <h3>
             All your GitHub notifications on your desktop. Nice &amp; Easy.
           </h3>
@@ -26,12 +33,13 @@ const IndexPage = () => (
             </strong>{' '}
             and <strong>multiple</strong> accounts.
           </p>
-        </div>
+        </SectionMain>
+
         <div className="col-md-4 col-md-offset-1">
           <img
             className="img-fluid screenshot"
-            src="/images/screenshot.png"
-            alt="Gitify App"
+            src="/images/all-read.png"
+            alt="Screenshot when there are no notifications read"
           />
         </div>
       </div>
@@ -47,7 +55,7 @@ const IndexPage = () => (
               alt="Your Preferences, Settings"
             />
           </div>
-          <div className="col-md-7 col-md-offset-1">
+          <SectionMain className="col-md-7 col-md-offset-1">
             <h3>It's about your preferences.</h3>
             <p className="lead">
               Gitify will notify you every time you receive a notification by
@@ -56,20 +64,20 @@ const IndexPage = () => (
               It is not there to interupt your workflow or distract you at all.
               It's your buddy.
             </p>
-          </div>
+          </SectionMain>
         </div>
       </div>
     </div>
 
     <div className="container container px-3 py-5">
       <div className="row">
-        <div className="col-md-7">
+        <SectionMain className="col-md-7">
           <h3>Free &amp; Open Source. It's ours.</h3>
           <p className="lead">
-            With Version 1.0.0 being a complete rewrite of the app, Gitify is
+            With Version 3.0.0 being a complete rewrite of the app, Gitify is
             based on{' '}
             <a
-              href="http://electron.atom.io/"
+              href="https://electron.atom.io/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -77,15 +85,15 @@ const IndexPage = () => (
             </a>{' '}
             - the base of{' '}
             <a
-              href="http://www.atom.io"
+              href="https://www.nodejs.org/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Atom Text Editor
+              NodeJS
             </a>
             ,{' '}
             <a
-              href="https://facebook.github.io/react/"
+              href="https://reactjs.org/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -101,12 +109,13 @@ const IndexPage = () => (
             </a>{' '}
             and more awesome open source libraries.
           </p>
-        </div>
+        </SectionMain>
+
         <div className="col-md-4 col-md-offset-1">
           <img
             className="img-fluid screenshot"
             src="/images/open-source.png"
-            alt="Open Source - Electron, React, Redux, SASS, GitHub, Node JS."
+            alt="Open Source - Electron, Node JS, React, Redux, GitHub."
           />
         </div>
       </div>
