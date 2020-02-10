@@ -20,7 +20,7 @@ export const Footer = () => {
               {new Date().getFullYear()}.
             </span>
 
-            <a href="https://www.gitify.io/">
+            <a href="https://www.gitify.io/" aria-label="GitHub Repository">
               <Octicon icon={MarkGithub} />
             </a>
           </div>
