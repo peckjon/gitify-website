@@ -36,7 +36,7 @@ export const Header = ({ siteTitle }) => {
     const fetchData = async () => {
       const { data } = await axios(API_REPO_URL);
 
-      const downloadURL = `https://github.com/manosim/gitify/releases/download/${data.tag_name}/${data.assets[0].name}`;
+      const downloadURL = `https://github.com/manosim/gitify/releases/download/${data.tag_name}/${data.assets[3].name}`;
 
       setDownloadURL(downloadURL);
       setVersion(data.tag_name);
