@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Svg = styled.svg`
-  fill: #3f4351;
+  fill: #203354;
   color: #fff;
   position: absolute;
   top: 0;

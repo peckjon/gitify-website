@@ -13,13 +13,14 @@ const SiteTitle = styled.h1`
 `;
 
 const SiteDesc = styled.h4`
+  margin-top: 0.75rem;
   font-size: 2.25rem;
   line-height: 2.85remrem;
   font-weight: 300;
 `;
 
 const ReleaseDetails = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   font-size: 0.8rem;
 `;
 
@@ -60,7 +61,7 @@ export const Header = ({ siteTitle }) => {
             <SiteTitle>Gitify</SiteTitle>
 
             <SiteDesc>
-              GitHub Notifications <br /> on your menu bar.
+              Your GitHub notifications <br /> on your menu bar.
             </SiteDesc>
 
             {version && (

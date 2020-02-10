@@ -68,14 +68,15 @@ const IndexPage = () => (
             All your GitHub notifications on your desktop. Nice &amp; Easy.
           </h3>
           <p className="lead">
-            Gitify is all about making your life easier. It just does a job.
-            Sitting on your dock or tray it informs you for any GitHub
-            notifications without being annoying and of course without adverts.
-            Works with{' '}
+            Ever got lost with GitHub notifications? Too many emails? Gitify is
+            all about making your life easier. Sitting on your menu bar, it
+            informs you for any GitHub notifications without being annoying and
+            of course without adverts. It just gets the job done. Works with
+            GitHub and{' '}
             <strong>
               <a href="https://enterprise.github.com/">GitHub Enterprise</a>
-            </strong>{' '}
-            and <strong>multiple</strong> accounts.
+            </strong>
+            . You can even connect <strong>multiple</strong> accounts.
           </p>
         </SectionMain>
 
@@ -103,10 +104,10 @@ const IndexPage = () => (
             <h3>It's about your preferences.</h3>
             <p className="lead">
               Gitify will notify you every time you receive a notification by
-              playing a sound (not an annoying one - promise!), by showing a
-              native OSX notification or by just turning its tray icon to green.
-              It is not there to interupt your workflow or distract you at all.
-              It's your buddy.
+              playing a sound (not an annoying one - it's a promise), showing
+              native mac OS notifications or by just turning its tray icon to
+              green. It is not there to interupt your workflow or distract you,
+              you can customize your settings to your preference.
             </p>
           </SectionMain>
         </div>
@@ -118,7 +119,7 @@ const IndexPage = () => (
         <SectionMain className="col-md-7">
           <h3>Free &amp; Open Source. It's ours.</h3>
           <p className="lead">
-            With Version 3.0.0 being a complete rewrite of the app, Gitify is
+            With version 3.0.0 being a complete rewrite of the app, Gitify is
             based on{' '}
             <a
               href="https://electron.atom.io/"
@@ -126,14 +127,6 @@ const IndexPage = () => (
               rel="noopener noreferrer"
             >
               Electron
-            </a>{' '}
-            - the base of{' '}
-            <a
-              href="https://www.nodejs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              NodeJS
             </a>
             ,{' '}
             <a
@@ -151,7 +144,15 @@ const IndexPage = () => (
             >
               Redux
             </a>{' '}
-            and more awesome open source libraries.
+            and more awesome open source libraries. Written in{' '}
+            <a
+              href="https://www.typescriptlang.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Typescript
+            </a>
+            .
           </p>
         </SectionMain>
 

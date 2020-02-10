@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Gitify`,
-    description: `GitHub Notifications on your desktop.`,
-    keywords: `gitify,mobile,desktop,application,github,notifications,menu bar,electron,open source,ekonstantinidis,manosim,mac,osx`,
+    description: `Your GitHub notifications on your menu bar.`,
+    keywords: `gitify,mobile,desktop,application,github,notifications,unread,menu bar,electron,open source,ekonstantinidis,manosim,mac,osx`,
     author: `@manosim_`,
   },
   plugins: [
@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `Gitify`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
@@ -32,18 +32,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `static/images/favicon.png`, // This path is relative to the root of the site.
-      },
-    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
