@@ -6,6 +6,15 @@ import Octicon, { CloudDownload } from '@primer/octicons-react';
 
 import { Logo } from './logo';
 
+const Container = styled.div`
+  background: rgb(242, 244, 248);
+  background: linear-gradient(
+    148deg,
+    rgba(242, 244, 248, 1) 0%,
+    rgba(213, 220, 235, 1) 100%
+  );
+`;
+
 const SiteTitle = styled.h1`
   font-size: 2.85rem;
   font-weight: 500;
@@ -46,7 +55,7 @@ export const Header = ({ siteTitle }) => {
   }, []);
 
   return (
-    <div className="header container-fluid py-3 px-2 mb-5 bg-primary text-primary">
+    <Container className="container-fluid py-3 px-2 mb-5 bg-primary text-primary">
       <div className="container">
         <div className="row">
           <div className="col-md-6 d-flex flex-column justify-content-center">
@@ -92,6 +101,6 @@ export const Header = ({ siteTitle }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };

@@ -18,12 +18,3 @@ body {
 }
 
 @import '../node_modules/bootstrap/scss/bootstrap';
-
-.header {
-  background: rgb(242, 244, 248);
-  background: linear-gradient(
-    148deg,
-    rgba(242, 244, 248, 1) 0%,
-    rgba(213, 220, 235, 1) 100%
-  );
-}
