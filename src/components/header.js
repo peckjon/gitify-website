@@ -71,7 +71,7 @@ export const Header = ({ siteTitle }) => {
                   id="download-apple"
                   href={downloadURL}
                 >
-                  <Octicon icon={CloudDownload} /> Mac OSX
+                  <Octicon className="mr-2" icon={CloudDownload} /> macOS
                 </a>
                 <div>
                   <div>Current Version: {version}.</div>
