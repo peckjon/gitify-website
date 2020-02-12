@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import { Header } from '../components/header';
@@ -57,7 +58,13 @@ const openSourceLibs = [
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="GitHub Notifications on your menu bar" />
+    <SEO title="GitHub notifications on your menu bar" />
+    <Helmet>
+      <meta
+        name="google-site-verification"
+        content="jJNnPZ2wu7F1tlSab57og1N3RNrMqhzTCzRrbztY8WU"
+      />
+    </Helmet>
 
     <Header />
 
