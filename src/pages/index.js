@@ -100,7 +100,7 @@ const IndexPage = () => (
             </p>
           </SectionMain>
 
-          <div className="col-md-5 col-md-offset-1">
+          <div className="col-md-5 col-md-offset-1 px-3">
             <Screenshot
               className="img-fluid"
               src="/images/all-read.png"
@@ -114,7 +114,7 @@ const IndexPage = () => (
     <div className="section container-fluid px-3 py-5 bg-primary text-light">
       <div className="container">
         <div className="row">
-          <div className="col-md-5">
+          <div className="col-md-5 px-3">
             <Screenshot
               className="img-fluid"
               src="/images/settings.png"

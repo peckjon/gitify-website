@@ -46,6 +46,8 @@ export const Header = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setFailed(false);
+
       try {
         const { data } = await axios(API_REPO_URL);
         const parsedDate = parseISO(data.published_at.slice(0, -1));
@@ -54,7 +56,6 @@ export const Header = () => {
         setDownloadURL(downloadURL);
         setVersion(data.tag_name);
         setReleaseDate(format(parsedDate, 'dd/MM/yyyy'));
-        setFailed(false);
       } catch (_) {
         setFailed(true);
       }
@@ -63,7 +64,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <Container className="container-fluid py-5 px-2 mb-5 text-primary">
+    <Container className="container-fluid py-5 px-2 text-primary">
       <div className="container">
         <div className="row">
           <div className="col-md-6 d-flex flex-column justify-content-center">
