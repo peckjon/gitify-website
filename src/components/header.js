@@ -53,7 +53,7 @@ export const Header = () => {
 
         setDownloadURL(downloadURL);
         setVersion(data.tag_name);
-        setReleaseDate(format(parseISO(data.created_at), 'dd/MM/yyyy'));
+        setReleaseDate(format(parseISO(data.published_at), 'dd/MM/yyyy'));
         setFailed(false);
       } catch (err) {
         console.log(err);
