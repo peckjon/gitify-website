@@ -12,6 +12,10 @@ const SectionMain = styled.div`
   justify-content: center;
 `;
 
+const Screenshot = styled.img`
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`;
+
 const LogosList = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
@@ -93,8 +97,8 @@ const IndexPage = () => (
         </SectionMain>
 
         <div className="col-md-4 col-md-offset-1">
-          <img
-            className="img-fluid screenshot"
+          <Screenshot
+            className="img-fluid"
             src="/images/all-read.png"
             alt="Screenshot when there are no notifications read"
           />
@@ -106,8 +110,8 @@ const IndexPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-md-4">
-            <img
-              className="img-fluid screenshot"
+            <Screenshot
+              className="img-fluid"
               src="/images/settings.png"
               alt="Your Preferences, Settings"
             />
