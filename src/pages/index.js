@@ -22,6 +22,11 @@ const LogosListItem = styled.li`
   border-radius: 0;
   padding: 0.5rem 0.75rem;
   margin: 1rem 0.25rem;
+  background-color: #f2f4f8;
+
+  &:hover {
+    background-color: #d9dbdf;
+  }
 
   .img-fluid {
     width: 4rem;

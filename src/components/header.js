@@ -36,20 +36,29 @@ const ReleaseDetails = styled.div`
 const API_REPO_URL =
   'https://api.github.com/repos/manosim/gitify/releases/latest';
 
+const REPO_RELEASES_URL = 'https://github.com/repos/gitify/releases/latest';
+
 export const Header = () => {
   const [downloadURL, setDownloadURL] = useState(null);
   const [version, setVersion] = useState(null);
   const [releaseDate, setReleaseDate] = useState(null);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios(API_REPO_URL);
+      try {
+        const { data } = await axios(API_REPO_URL);
 
-      const downloadURL = `https://github.com/manosim/gitify/releases/download/${data.tag_name}/${data.assets[3].name}`;
+        const downloadURL = `https://github.com/manosim/gitify/releases/download/${data.tag_name}/${data.assets[3].name}`;
 
-      setDownloadURL(downloadURL);
-      setVersion(data.tag_name);
-      setReleaseDate(format(parseISO(data.created_at), 'dd/MM/yyyy'));
+        setDownloadURL(downloadURL);
+        setVersion(data.tag_name);
+        setReleaseDate(format(parseISO(data.created_at), 'dd/MM/yyyy'));
+        setFailed(false);
+      } catch (err) {
+        console.log(err);
+        setFailed(true);
+      }
     };
     fetchData();
   }, []);
@@ -73,7 +82,7 @@ export const Header = () => {
               Your GitHub notifications <br /> on your menu bar.
             </SiteDesc>
 
-            {version && (
+            {!failed && version && (
               <ReleaseDetails>
                 <a
                   className="btn btn-success mb-3 px-3 py-2"
@@ -85,6 +94,22 @@ export const Header = () => {
                 <div>
                   <div>Current Version: {version}.</div>
                   <div>Released on {releaseDate}.</div>
+                </div>
+              </ReleaseDetails>
+            )}
+
+            {failed && (
+              <ReleaseDetails>
+                <div>
+                  <a
+                    className="btn btn-success mb-3 px-3 py-2"
+                    id="download-apple"
+                    href={REPO_RELEASES_URL}
+                  >
+                    View GitHub Releases
+                  </a>
+
+                  <div>Couldn't get latest version.</div>
                 </div>
               </ReleaseDetails>
             )}

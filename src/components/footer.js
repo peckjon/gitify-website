@@ -4,7 +4,6 @@ import Octicon, { MarkGithub } from '@primer/octicons-react';
 
 const FooterWrapper = styled.div`
   display: flex;
-
   padding: 2rem;
   font-size: 0.8rem;
 `;
@@ -17,7 +16,8 @@ export const Footer = () => {
           <div className="col d-flex justify-content-between">
             <span>
               Copyright © <a href="https://www.gitify.io/">Gitify</a>{' '}
-              {new Date().getFullYear()}.
+              {new Date().getFullYear()}. Developed by{' '}
+              <a href="https://www.manos.im/">Emmanouil Konstantinidis</a>.
             </span>
 
             <a
