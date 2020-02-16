@@ -13,6 +13,8 @@ const SectionMain = styled.div`
 `;
 
 const Screenshot = styled.img`
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
@@ -77,31 +79,34 @@ const IndexPage = () => (
 
     <Header />
 
-    <div className="section container px-3 py-5">
-      <div className="row">
-        <SectionMain className="col-md-7">
-          <h3>
-            All your GitHub notifications on your desktop. Nice &amp; Easy.
-          </h3>
-          <p className="lead">
-            Ever got lost with GitHub notifications? Too many emails? Gitify is
-            all about making your life easier. Sitting on your menu bar, it
-            informs you for any GitHub notifications without being annoying and
-            of course without adverts. It just gets the job done. Works with
-            GitHub and{' '}
-            <strong>
-              <a href="https://enterprise.github.com/">GitHub Enterprise</a>
-            </strong>
-            . You can even connect <strong>multiple</strong> accounts.
-          </p>
-        </SectionMain>
+    <div className="section container-fluid px-3 py-5">
+      <div className="container">
+        <div className="row">
+          <SectionMain className="col-md-7">
+            <h3>
+              All your GitHub notifications on your desktop. Nice &amp; Easy.
+            </h3>
 
-        <div className="col-md-4 col-md-offset-1">
-          <Screenshot
-            className="img-fluid"
-            src="/images/all-read.png"
-            alt="Screenshot when there are no notifications read"
-          />
+            <p className="lead">
+              Ever got lost with GitHub notifications? Too many emails? Gitify
+              is all about making your life easier. Sitting on your menu bar, it
+              informs you for any GitHub notifications without being annoying
+              and of course without adverts. It just gets the job done. Works
+              with GitHub and{' '}
+              <strong>
+                <a href="https://enterprise.github.com/">GitHub Enterprise</a>
+              </strong>
+              . You can even connect <strong>multiple</strong> accounts.
+            </p>
+          </SectionMain>
+
+          <div className="col-md-5 col-md-offset-1">
+            <Screenshot
+              className="img-fluid"
+              src="/images/all-read.png"
+              alt="Screenshot when there are no notifications read"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -109,7 +114,7 @@ const IndexPage = () => (
     <div className="section container-fluid px-3 py-5 bg-primary text-light">
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-5">
             <Screenshot
               className="img-fluid"
               src="/images/settings.png"
