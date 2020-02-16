@@ -48,15 +48,14 @@ export const Header = () => {
     const fetchData = async () => {
       try {
         const { data } = await axios(API_REPO_URL);
-
+        const parsedDate = parseISO(data.published_at.slice(0, -1));
         const downloadURL = `https://github.com/manosim/gitify/releases/download/${data.tag_name}/${data.assets[3].name}`;
 
         setDownloadURL(downloadURL);
         setVersion(data.tag_name);
-        setReleaseDate(format(parseISO(data.published_at), 'dd/MM/yyyy'));
+        setReleaseDate(format(parsedDate, 'dd/MM/yyyy'));
         setFailed(false);
-      } catch (err) {
-        console.log(err);
+      } catch (_) {
         setFailed(true);
       }
     };
