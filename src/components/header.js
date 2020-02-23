@@ -33,9 +33,9 @@ const ReleaseDetails = styled.div`
   font-size: 0.8rem;
 `;
 
+const FILENAME_REGEX = /Gitify-\d.\d.\d.dmg/g;
 const API_REPO_URL =
   'https://api.github.com/repos/manosim/gitify/releases/latest';
-
 const REPO_RELEASES_URL = 'https://github.com/repos/gitify/releases/latest';
 
 export const Header = () => {
@@ -51,9 +51,8 @@ export const Header = () => {
       try {
         const { data } = await axios(API_REPO_URL);
         const parsedDate = parseISO(data.published_at.slice(0, -1));
-        const downloadURL = `https://github.com/manosim/gitify/releases/download/${data.tag_name}/${data.assets[3].name}`;
-
-        setDownloadURL(downloadURL);
+        const asset = data.assets.find(item => item.name.match(FILENAME_REGEX));
+        setDownloadURL(asset.browser_download_url);
         setVersion(data.tag_name);
         setReleaseDate(format(parsedDate, 'dd/MM/yyyy'));
       } catch (_) {
