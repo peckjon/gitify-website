@@ -37,7 +37,10 @@ const Image = styled.img`
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transform: rotate(10deg);
+
+  @media (min-width: 768px) {
+    transform: rotate(10deg);
+  }
 `;
 
 const FILENAME_REGEX = /Gitify-\d.\d.\d.dmg/g;
