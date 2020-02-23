@@ -33,6 +33,13 @@ const ReleaseDetails = styled.div`
   font-size: 0.8rem;
 `;
 
+const Image = styled.img`
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: rotate(10deg);
+`;
+
 const FILENAME_REGEX = /Gitify-\d.\d.\d.dmg/g;
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/repos/gitify/releases/latest';
@@ -114,7 +121,7 @@ export const Header = () => {
           </div>
 
           <div className="col-md-6 d-flex flex-column justify-content-center">
-            <img
+            <Image
               className="img-fluid"
               style={{ width: '25rem', display: 'block', margin: '3rem auto' }}
               id="screenshot"
