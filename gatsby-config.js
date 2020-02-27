@@ -23,8 +23,8 @@ module.exports = {
         name: `Gitify`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#203354`,
+        theme_color: `#203354`,
         display: `minimal-ui`,
         icon: `static/images/favicon.png`, // This path is relative to the root of the site.
       },
