@@ -45,7 +45,7 @@ const Image = styled.img`
 
 const FILENAME_REGEX = /Gitify-\d.\d.\d.dmg/g;
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
-const REPO_RELEASES_URL = 'https://github.com/repos/gitify/releases/latest';
+const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
 
 export const Header = () => {
   const [downloadURL, setDownloadURL] = useState(null);
