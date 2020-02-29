@@ -94,7 +94,6 @@ export const Header = () => {
               <ReleaseDetails>
                 <a
                   className="btn btn-success mb-3 px-3 py-2"
-                  id="download-apple"
                   href={downloadURL}
                 >
                   <Octicon className="mr-2" icon={CloudDownload} /> macOS
@@ -111,7 +110,6 @@ export const Header = () => {
                 <div>
                   <a
                     className="btn btn-success mb-3 px-3 py-2"
-                    id="download-apple"
                     href={REPO_RELEASES_URL}
                   >
                     View GitHub Releases
