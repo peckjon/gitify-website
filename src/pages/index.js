@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
-import { Box, Button, Flex, Heading, Image } from 'rebass/styled-components';
+import { Box, Flex, Heading, Link, Image } from 'rebass/styled-components';
 
 import Layout from '../components/layout';
 import { Header } from '../components/header';
@@ -105,9 +105,9 @@ const IndexPage = () => (
           informs you for any GitHub notifications without being annoying and of
           course without adverts. It just gets the job done. Works with GitHub
           and{' '}
-          <strong>
-            <a href="https://enterprise.github.com/">GitHub Enterprise</a>
-          </strong>
+          <Link variant="link" href="https://enterprise.github.com/">
+            GitHub Enterprise
+          </Link>
           . You can even connect <strong>multiple</strong> accounts.
         </Paragraph>
       </SectionMain>
@@ -152,43 +152,47 @@ const IndexPage = () => (
       </Flex>
     </Box>
 
-    <Flex flexWrap="wrap" sx={{ maxWidth: 1140, mx: 'auto' }}>
+    <Flex flexWrap="wrap" sx={{ maxWidth: 960, mx: 'auto' }}>
       <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
         <SectionTitle as="h3">Free &amp; Open Source. It's ours.</SectionTitle>
         <Paragraph>
           With version 3.0.0 being a complete rewrite of the app, Gitify is
           based on{' '}
-          <a
+          <Link
+            variant="link"
             href="https://electron.atom.io/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Electron
-          </a>
+          </Link>
           ,{' '}
-          <a
+          <Link
+            variant="link"
             href="https://reactjs.org/"
             target="_blank"
             rel="noopener noreferrer"
           >
             React
-          </a>
+          </Link>
           ,{' '}
-          <a
+          <Link
+            variant="link"
             href="http://redux.js.org/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Redux
-          </a>{' '}
+          </Link>{' '}
           and more awesome open source libraries. Written in{' '}
-          <a
+          <Link
+            variant="link"
             href="https://www.typescriptlang.org/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Typescript
-          </a>
+          </Link>
           .
         </Paragraph>
       </SectionMain>

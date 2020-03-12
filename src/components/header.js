@@ -82,8 +82,8 @@ export const Header = () => {
   }, []);
 
   return (
-    <Container width={[1, 1, 1]} style={{ backgroundColor: 'red' }}>
-      <Flex flexWrap="wrap" sx={{ maxWidth: 1140, mx: 'auto' }}>
+    <Container width={[1, 1, 1]}>
+      <Flex flexWrap="wrap" sx={{ maxWidth: 960, mx: 'auto' }}>
         <Box
           width={[1, 1, 1 / 2]}
           display="flex"

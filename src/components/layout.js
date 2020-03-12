@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 1.5;
     background-color: #fff;
+    -webkit-font-smoothing: antialiased;
   }
 `;
 
@@ -23,12 +24,25 @@ const theme = {
     info: '#8ba9c6',
     warning: '#fcaa67',
     danger: '#b7524f',
+
+    lightGray: '#f8f9fa',
   },
 
   buttons: {
     success: {
       color: 'white',
-      bg: '#147d3b',
+      bg: 'success',
+    },
+  },
+
+  variants: {
+    link: {
+      color: 'primary',
+      textDecoration: 'none',
+      ':hover,:focus,.active': {
+        color: 'primary',
+        textDecoration: 'underline',
+      },
     },
   },
 };
