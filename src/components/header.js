@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { Box, Button, Flex, Heading, Image } from 'rebass/styled-components';
 import { format, parseISO } from 'date-fns';
 import Octicon, { CloudDownload } from '@primer/octicons-react';
 
 import { Logo } from './logo';
 
-const Container = styled.div`
+const Container = styled(Box)`
   background: rgb(242, 244, 248);
   background: linear-gradient(
     148deg,
     rgba(242, 244, 248, 1) 0%,
     rgba(213, 220, 235, 1) 100%
   );
+  color: ${props => props.theme.colors.primary};
+  padding: 3rem 0.5rem;
 `;
 
-const SiteTitle = styled.h1`
+const SiteTitle = styled(Heading)`
   font-size: 2.85rem;
   font-weight: 500;
   line-height: 3.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
 `;
 
-const SiteDesc = styled.h4`
+const SiteDesc = styled(Heading)`
   margin-top: 0.75rem;
+  margin-bottom: 0;
   font-size: 2.25rem;
-  line-height: 2.85remrem;
+  line-height: 2.85rem;
   font-weight: 300;
 `;
 
@@ -33,7 +39,11 @@ const ReleaseDetails = styled.div`
   font-size: 0.8rem;
 `;
 
-const Image = styled.img`
+const DownloadIcon = styled(Octicon)`
+  margin-right: 1rem;
+`;
+
+const MockUp = styled(Image)`
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -72,66 +82,90 @@ export const Header = () => {
   }, []);
 
   return (
-    <Container className="container-fluid py-5 px-2 text-primary">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 d-flex flex-column justify-content-center">
-            <Logo
-              style={{
-                maxWidth: '5rem',
-                margin: '0 0 1rem',
-              }}
-              isDark
-            />
+    <Container width={[1, 1, 1]} style={{ backgroundColor: 'red' }}>
+      <Flex flexWrap="wrap" sx={{ maxWidth: 1140, mx: 'auto' }}>
+        <Box
+          width={[1, 1, 1 / 2]}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          px="3"
+          py="1"
+        >
+          <Logo
+            style={{
+              maxWidth: '5rem',
+              margin: '0 0 1rem',
+            }}
+            isDark
+          />
 
-            <SiteTitle>Gitify</SiteTitle>
+          <SiteTitle as="h1">Gitify</SiteTitle>
 
-            <SiteDesc>
-              Your GitHub notifications <br /> on your menu bar.
-            </SiteDesc>
+          <SiteDesc as="h4">
+            Your GitHub notifications <br /> on your menu bar.
+          </SiteDesc>
 
-            {!failed && version && (
-              <ReleaseDetails>
-                <a
-                  className="btn btn-success mb-3 px-3 py-2"
-                  href={downloadURL}
+          {!failed && version && (
+            <ReleaseDetails>
+              <Button
+                as="a"
+                href={downloadURL}
+                variant="success"
+                mb={3}
+                px={3}
+                py={2}
+              >
+                <DownloadIcon icon={CloudDownload} /> macOS
+              </Button>
+
+              <div>
+                <div>Current Version: {version}.</div>
+                <div>Released on {releaseDate}.</div>
+              </div>
+            </ReleaseDetails>
+          )}
+
+          {failed && (
+            <ReleaseDetails>
+              <div>
+                <Button
+                  as="a"
+                  href={REPO_RELEASES_URL}
+                  variant="success"
+                  mb={3}
+                  px={3}
+                  py={2}
                 >
-                  <Octicon className="mr-2" icon={CloudDownload} /> macOS
-                </a>
-                <div>
-                  <div>Current Version: {version}.</div>
-                  <div>Released on {releaseDate}.</div>
-                </div>
-              </ReleaseDetails>
-            )}
+                  View GitHub Releases
+                </Button>
 
-            {failed && (
-              <ReleaseDetails>
-                <div>
-                  <a
-                    className="btn btn-success mb-3 px-3 py-2"
-                    href={REPO_RELEASES_URL}
-                  >
-                    View GitHub Releases
-                  </a>
+                <div>Couldn't get latest version.</div>
+              </div>
+            </ReleaseDetails>
+          )}
+        </Box>
 
-                  <div>Couldn't get latest version.</div>
-                </div>
-              </ReleaseDetails>
-            )}
-          </div>
-
-          <div className="col-md-6 d-flex flex-column justify-content-center">
-            <Image
-              className="img-fluid"
-              style={{ width: '25rem', display: 'block', margin: '3rem auto' }}
-              id="screenshot"
-              src="/images/mockup.png"
-              alt="Gitify Desktop App"
-            />
-          </div>
-        </div>
-      </div>
+        <Box
+          width={[1, 1, 1 / 2]}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          px="3"
+          py="1"
+        >
+          <MockUp
+            style={{
+              width: '25rem',
+              margin: '2rem 0',
+            }}
+            id="screenshot"
+            src="/images/mockup.png"
+            alt="Gitify Desktop App"
+          />
+        </Box>
+      </Flex>
     </Container>
   );
 };

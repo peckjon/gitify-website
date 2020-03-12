@@ -1,29 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
+import { Box, Button, Flex, Heading, Image } from 'rebass/styled-components';
 
 import Layout from '../components/layout';
 import { Header } from '../components/header';
 import SEO from '../components/seo';
 
-const SectionMain = styled.div`
+const SectionMain = styled(Box)`
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
-const Screenshot = styled.img`
+const SectionSide = styled(Box)`
+  padding: 3rem;
+`;
+
+const SectionTitle = styled(Heading)`
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+`;
+
+const Paragraph = styled.p`
+  font-size: 1.25rem;
+  font-weight: 300;
+`;
+
+const Screenshot = styled(Image)`
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: 25rem;
 `;
 
-const LogosList = styled.ul`
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const LogosListItem = styled.li`
+const LogosListItem = styled.div`
   border: 0;
   border-radius: 0;
   padding: 0.5rem 0.75rem;
@@ -33,10 +47,10 @@ const LogosListItem = styled.li`
   &:hover {
     background-color: #d9dbdf;
   }
+`;
 
-  .img-fluid {
-    width: 4rem;
-  }
+const LogoItem = styled(Image)`
+  width: 3.25rem;
 `;
 
 const openSourceLibs = [
@@ -79,117 +93,122 @@ const IndexPage = () => (
 
     <Header />
 
-    <div className="section container-fluid px-3 py-5">
-      <div className="container">
-        <div className="row">
-          <SectionMain className="col-md-7">
-            <h3>
-              All your GitHub notifications on your desktop. Nice &amp; Easy.
-            </h3>
+    <Flex flexWrap="wrap" sx={{ maxWidth: 960, mx: 'auto' }}>
+      <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
+        <SectionTitle as="h3">
+          All your GitHub notifications on your desktop. Nice &amp; Easy.
+        </SectionTitle>
 
-            <p className="lead">
-              Ever got lost with GitHub notifications? Too many emails? Gitify
-              is all about making your life easier. Sitting on your menu bar, it
-              informs you for any GitHub notifications without being annoying
-              and of course without adverts. It just gets the job done. Works
-              with GitHub and{' '}
-              <strong>
-                <a href="https://enterprise.github.com/">GitHub Enterprise</a>
-              </strong>
-              . You can even connect <strong>multiple</strong> accounts.
-            </p>
-          </SectionMain>
+        <Paragraph>
+          Ever got lost with GitHub notifications? Too many emails? Gitify is
+          all about making your life easier. Sitting on your menu bar, it
+          informs you for any GitHub notifications without being annoying and of
+          course without adverts. It just gets the job done. Works with GitHub
+          and{' '}
+          <strong>
+            <a href="https://enterprise.github.com/">GitHub Enterprise</a>
+          </strong>
+          . You can even connect <strong>multiple</strong> accounts.
+        </Paragraph>
+      </SectionMain>
 
-          <div className="col-md-5 col-md-offset-1 px-3">
-            <Screenshot
-              className="img-fluid"
-              src="/images/all-read.png"
-              alt="Screenshot when there are no notifications read"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+      <SectionSide
+        width={[1, 1, 5 / 12]}
+        display="flex"
+        justifyContent="center"
+      >
+        <Screenshot
+          className="img-fluid"
+          src="/images/all-read.png"
+          alt="Screenshot when there are no notifications read"
+        />
+      </SectionSide>
+    </Flex>
 
-    <div className="section container-fluid px-3 py-5 bg-primary text-light">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-5 px-3">
-            <Screenshot
-              className="img-fluid"
-              src="/images/settings.png"
-              alt="Your Preferences, Settings"
-            />
-          </div>
-          <SectionMain className="col-md-7 col-md-offset-1">
-            <h3>It's about your preferences.</h3>
-            <p className="lead">
-              Gitify will notify you every time you receive a notification by
-              playing a sound (not an annoying one - it's a promise), showing
-              native mac OS notifications or by just turning its tray icon to
-              green. It is not there to interupt your workflow or distract you,
-              you can customize your settings to your preference.
-            </p>
-          </SectionMain>
-        </div>
-      </div>
-    </div>
+    <Box bg="primary" color="white">
+      <Flex flexWrap="wrap" sx={{ maxWidth: 1140, mx: 'auto' }}>
+        <SectionSide
+          width={[1, 1, 5 / 12]}
+          display="flex"
+          justifyContent="center"
+        >
+          <Screenshot
+            className="img-fluid"
+            src="/images/settings.png"
+            alt="Your Preferences, Settings"
+          />
+        </SectionSide>
 
-    <div className="container container px-3 py-5">
-      <div className="row">
-        <SectionMain className="col-md-7">
-          <h3>Free &amp; Open Source. It's ours.</h3>
-          <p className="lead">
-            With version 3.0.0 being a complete rewrite of the app, Gitify is
-            based on{' '}
-            <a
-              href="https://electron.atom.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Electron
-            </a>
-            ,{' '}
-            <a
-              href="https://reactjs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React
-            </a>
-            ,{' '}
-            <a
-              href="http://redux.js.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Redux
-            </a>{' '}
-            and more awesome open source libraries. Written in{' '}
-            <a
-              href="https://www.typescriptlang.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Typescript
-            </a>
-            .
-          </p>
+        <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
+          <SectionTitle as="h3">It's about your preferences.</SectionTitle>
+          <Paragraph>
+            Gitify will notify you every time you receive a notification by
+            playing a sound (not an annoying one - it's a promise), showing
+            native mac OS notifications or by just turning its tray icon to
+            green. It is not there to interupt your workflow or distract you,
+            you can customize your settings to your preference.
+          </Paragraph>
         </SectionMain>
+      </Flex>
+    </Box>
 
-        <div className="col-md-4 col-md-offset-1">
-          <LogosList className="list-group list-group-horizontal">
-            {openSourceLibs.map((item, index) => (
-              <LogosListItem key={index} className="list-group-item">
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  <img className="img-fluid" src={item.image} alt={item.name} />
-                </a>
-              </LogosListItem>
-            ))}
-          </LogosList>
-        </div>
-      </div>
-    </div>
+    <Flex flexWrap="wrap" sx={{ maxWidth: 1140, mx: 'auto' }}>
+      <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
+        <SectionTitle as="h3">Free &amp; Open Source. It's ours.</SectionTitle>
+        <Paragraph>
+          With version 3.0.0 being a complete rewrite of the app, Gitify is
+          based on{' '}
+          <a
+            href="https://electron.atom.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Electron
+          </a>
+          ,{' '}
+          <a
+            href="https://reactjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React
+          </a>
+          ,{' '}
+          <a
+            href="http://redux.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Redux
+          </a>{' '}
+          and more awesome open source libraries. Written in{' '}
+          <a
+            href="https://www.typescriptlang.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Typescript
+          </a>
+          .
+        </Paragraph>
+      </SectionMain>
+
+      <SectionSide
+        width={[1, 1, 5 / 12]}
+        display="flex"
+        justifyContent="center"
+      >
+        <Flex flexWrap="wrap" justifyContent="center" maxWidth={260}>
+          {openSourceLibs.map((item, index) => (
+            <LogosListItem key={index}>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <LogoItem src={item.image} alt={item.name} />
+              </a>
+            </LogosListItem>
+          ))}
+        </Flex>
+      </SectionSide>
+    </Flex>
   </Layout>
 );
 
