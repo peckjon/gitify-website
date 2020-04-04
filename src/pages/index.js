@@ -13,9 +13,7 @@ const SectionMain = styled(Box)`
   justify-content: center;
 `;
 
-const SectionSide = styled(Box)`
-  padding: 3rem;
-`;
+const SectionSide = styled(Box)``;
 
 const SectionTitle = styled(Heading)`
   margin-top: 0;
@@ -117,8 +115,10 @@ const IndexPage = () => (
         width={[1, 1, 5 / 12]}
         display="flex"
         justifyContent="center"
+        p={['1.5rem', '2rem', '3rem']}
       >
         <Screenshot
+          alignSelf="baseline"
           className="img-fluid"
           src="/images/all-read.png"
           alt="Screenshot when there are no notifications read"
@@ -132,8 +132,10 @@ const IndexPage = () => (
           width={[1, 1, 5 / 12]}
           display="flex"
           justifyContent="center"
+          p={['1.5rem', '2rem', '3rem']}
         >
           <Screenshot
+            alignSelf="baseline"
             className="img-fluid"
             src="/images/settings.png"
             alt="Your Preferences, Settings"
@@ -201,6 +203,7 @@ const IndexPage = () => (
         width={[1, 1, 5 / 12]}
         display="flex"
         justifyContent="center"
+        p={['1.5rem', '2rem', '3rem']}
       >
         <Flex flexWrap="wrap" justifyContent="center" maxWidth={260}>
           {openSourceLibs.map((item, index) => (
