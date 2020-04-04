@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: process.env.SITE_URL,
     title: `Gitify`,
     description: `Your GitHub notifications on your menu bar.`,
     keywords: `gitify,mobile,desktop,application,github,notifications,unread,menu bar,electron,open source,ekonstantinidis,manosim,mac,osx`,
@@ -7,9 +8,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
