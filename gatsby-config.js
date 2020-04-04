@@ -6,8 +6,8 @@ module.exports = {
     author: `@manosim_`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

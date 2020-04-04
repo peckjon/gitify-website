@@ -1,23 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import Octicon, { MarkGithub } from '@primer/octicons-react';
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Link,
-} from 'rebass/styled-components';
-
-const FooterWrapper = styled.div`
-  display: flex;
-  padding: 2rem;
-  font-size: 0.8rem;
-`;
+import { Box, Flex, Link } from 'rebass/styled-components';
 
 export const Footer = () => (
-  <Box bg="lightGray" px={3} py={4} mt={5} textAlign="center" fontSize="0.8rem">
+  <Box bg="lightGray" px={3} py={4} mt={3} textAlign="center" fontSize="0.8rem">
     <Flex
       flexWrap="wrap"
       py={1}

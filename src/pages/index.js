@@ -33,8 +33,9 @@ const Paragraph = styled.p`
 const Screenshot = styled(Image)`
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
   max-width: 25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 const LogosListItem = styled.div`
@@ -126,7 +127,7 @@ const IndexPage = () => (
     </Flex>
 
     <Box bg="primary" color="white">
-      <Flex flexWrap="wrap" sx={{ maxWidth: 1140, mx: 'auto' }}>
+      <Flex flexWrap="wrap" sx={{ maxWidth: 960, mx: 'auto' }}>
         <SectionSide
           width={[1, 1, 5 / 12]}
           display="flex"
@@ -156,8 +157,7 @@ const IndexPage = () => (
       <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
         <SectionTitle as="h3">Free &amp; Open Source. It's ours.</SectionTitle>
         <Paragraph>
-          With version 3.0.0 being a complete rewrite of the app, Gitify is
-          based on{' '}
+          With version 3 being a complete rewrite of the app, Gitify is based on{' '}
           <Link
             variant="link"
             href="https://electron.atom.io/"
@@ -178,7 +178,7 @@ const IndexPage = () => (
           ,{' '}
           <Link
             variant="link"
-            href="http://redux.js.org/"
+            href="s"
             target="_blank"
             rel="noopener noreferrer"
           >
