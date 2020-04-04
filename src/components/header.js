@@ -14,7 +14,7 @@ const Container = styled(Box)`
     rgba(242, 244, 248, 1) 0%,
     rgba(213, 220, 235, 1) 100%
   );
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   padding: 3rem 0.5rem;
 `;
 
@@ -40,7 +40,7 @@ const ReleaseDetails = styled.div`
 `;
 
 const DownloadIcon = styled(Octicon)`
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 `;
 
 const MockUp = styled(Image)`
@@ -70,7 +70,9 @@ export const Header = () => {
       try {
         const { data } = await axios(REPO_URL);
         const parsedDate = parseISO(data.published_at.slice(0, -1));
-        const asset = data.assets.find(item => item.name.match(FILENAME_REGEX));
+        const asset = data.assets.find((item) =>
+          item.name.match(FILENAME_REGEX)
+        );
         setDownloadURL(asset.browser_download_url);
         setVersion(data.tag_name);
         setReleaseDate(format(parsedDate, 'dd/MM/yyyy'));

@@ -20,10 +20,8 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
   colors: {
     primary: '#203354',
-    success: '#147d3b',
-    info: '#8ba9c6',
-    warning: '#fcaa67',
-    danger: '#b7524f',
+    success: '#147D3B',
+    successDark: '#006422',
 
     lightGray: '#f8f9fa',
   },
@@ -32,6 +30,9 @@ const theme = {
     success: {
       color: 'white',
       bg: 'success',
+      ':hover,:focus,.active': {
+        bg: 'successDark',
+      },
     },
   },
 
