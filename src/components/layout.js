@@ -48,7 +48,7 @@ const theme = {
   },
 };
 
-const Layout = ({ children }) => {
+export const Layout = ({ children, hideFooter }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -56,13 +56,16 @@ const Layout = ({ children }) => {
 
       {children}
 
-      <Footer />
+      {!hideFooter && <Footer />}
     </ThemeProvider>
   );
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  hideFooter: PropTypes.bool,
 };
 
-export default Layout;
+Layout.defaultProps = {
+  hideFooter: false,
+};

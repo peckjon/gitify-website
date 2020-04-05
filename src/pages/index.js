@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import { Box, Flex, Heading, Link, Image } from 'rebass/styled-components';
 
-import Layout from '../components/layout';
+import { Layout } from '../components/layout';
 import { Header } from '../components/header';
-import SEO from '../components/seo';
+import { SEO } from '../components/seo';
 
 const SectionMain = styled(Box)`
   display: flex;
