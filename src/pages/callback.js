@@ -1,12 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import {
-  Link as RebassLink,
-  Box,
-  Flex,
-  Heading,
-  Image,
-} from 'rebass/styled-components';
+import { Link as RebassLink, Box, Heading } from 'rebass/styled-components';
 import styled from 'styled-components';
 
 import { Layout } from '../components/layout';
