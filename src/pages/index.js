@@ -112,33 +112,6 @@ const IndexPage = () => (
     <Header />
 
     <SectionRow>
-      <SectionSide
-        width={[1, 1, 5 / 12]}
-        display="flex"
-        justifyContent="center"
-        p={['1.5rem', '2rem', '3rem']}
-      >
-        <Screenshot
-          alignSelf="baseline"
-          className="img-fluid"
-          src="/images/settings.png"
-          alt="Your Preferences, Settings"
-        />
-      </SectionSide>
-
-      <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
-        <SectionTitle as="h3">It's about your preferences.</SectionTitle>
-        <Paragraph>
-          Gitify will notify you every time you receive a notification by
-          playing a sound (not an annoying one - it's a promise), showing native
-          mac OS notifications or by just turning its tray icon to green. It is
-          not there to interupt your workflow or distract you, you can customize
-          your settings to your preference.
-        </Paragraph>
-      </SectionMain>
-    </SectionRow>
-
-    <SectionRow isDark>
       <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
         <SectionTitle as="h3">
           All your GitHub notifications on your desktop. Nice &amp; Easy.
@@ -170,6 +143,33 @@ const IndexPage = () => (
           alt="Screenshot when there are no notifications read"
         />
       </SectionSide>
+    </SectionRow>
+
+    <SectionRow isDark>
+      <SectionSide
+        width={[1, 1, 5 / 12]}
+        display="flex"
+        justifyContent="center"
+        p={['1.5rem', '2rem', '3rem']}
+      >
+        <Screenshot
+          alignSelf="baseline"
+          className="img-fluid"
+          src="/images/settings.png"
+          alt="Your Preferences, Settings"
+        />
+      </SectionSide>
+
+      <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
+        <SectionTitle as="h3">It's about your preferences.</SectionTitle>
+        <Paragraph>
+          Gitify will notify you every time you receive a notification by
+          playing a sound (not an annoying one - it's a promise), showing native
+          mac OS notifications or by just turning its tray icon to green. It is
+          not there to interupt your workflow or distract you, you can customize
+          your settings to your preference.
+        </Paragraph>
+      </SectionMain>
     </SectionRow>
 
     <SectionRow>
