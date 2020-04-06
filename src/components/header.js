@@ -85,14 +85,17 @@ export const Header = () => {
 
   return (
     <Container width={[1, 1, 1]}>
-      <Flex flexWrap="wrap" sx={{ maxWidth: 960, mx: 'auto' }}>
+      <Flex
+        flexWrap="wrap"
+        sx={{ maxWidth: 960, mx: 'auto' }}
+        px={['1rem', '2rem', '2rem']}
+      >
         <Box
           width={[1, 1, 1 / 2]}
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          px="3"
-          py="1"
+          p="1rem"
         >
           <Logo
             style={{
@@ -154,8 +157,7 @@ export const Header = () => {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          px="3"
-          py="1"
+          p="1rem"
         >
           <MockUp
             style={{

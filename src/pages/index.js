@@ -7,6 +7,12 @@ import { Layout } from '../components/layout';
 import { Header } from '../components/header';
 import { SEO } from '../components/seo';
 
+const Section = styled(Box)`
+  background-color: ${(props) =>
+    props.isDark ? props.theme.colors.primary : 'white'};
+  color: ${(props) => (props.isDark ? 'white' : 'black')};
+`;
+
 const SectionMain = styled(Box)`
   display: flex;
   flex-direction: column;
@@ -41,10 +47,10 @@ const LogosListItem = styled.div`
   border-radius: 0;
   padding: 0.5rem 0.75rem;
   margin: 1rem 0.25rem;
-  background-color: #f2f4f8;
+  background-color: ${(props) => props.theme.colors.lightGray};
 
   &:hover {
-    background-color: #d9dbdf;
+    background-color: ${(props) => props.theme.colors.primary};
   }
 `;
 
@@ -80,6 +86,19 @@ const openSourceLibs = [
   },
 ];
 
+const SectionRow = ({ isDark, children }) => (
+  <Section isDark={isDark}>
+    <Flex
+      flexWrap="wrap"
+      sx={{ maxWidth: 960, mx: 'auto' }}
+      px="2rem"
+      py={['2rem', '2rem', '2rem']}
+    >
+      {children}
+    </Flex>
+  </Section>
+);
+
 const IndexPage = () => (
   <Layout>
     <SEO title="GitHub notifications on your menu bar" />
@@ -92,7 +111,34 @@ const IndexPage = () => (
 
     <Header />
 
-    <Flex flexWrap="wrap" sx={{ maxWidth: 960, mx: 'auto' }}>
+    <SectionRow>
+      <SectionSide
+        width={[1, 1, 5 / 12]}
+        display="flex"
+        justifyContent="center"
+        p={['1.5rem', '2rem', '3rem']}
+      >
+        <Screenshot
+          alignSelf="baseline"
+          className="img-fluid"
+          src="/images/settings.png"
+          alt="Your Preferences, Settings"
+        />
+      </SectionSide>
+
+      <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
+        <SectionTitle as="h3">It's about your preferences.</SectionTitle>
+        <Paragraph>
+          Gitify will notify you every time you receive a notification by
+          playing a sound (not an annoying one - it's a promise), showing native
+          mac OS notifications or by just turning its tray icon to green. It is
+          not there to interupt your workflow or distract you, you can customize
+          your settings to your preference.
+        </Paragraph>
+      </SectionMain>
+    </SectionRow>
+
+    <SectionRow isDark>
       <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
         <SectionTitle as="h3">
           All your GitHub notifications on your desktop. Nice &amp; Easy.
@@ -104,7 +150,7 @@ const IndexPage = () => (
           informs you for any GitHub notifications without being annoying and of
           course without adverts. It just gets the job done. Works with GitHub
           and{' '}
-          <Link variant="link" href="https://enterprise.github.com/">
+          <Link variant="linkDark" href="https://enterprise.github.com/">
             GitHub Enterprise
           </Link>
           . You can even connect <strong>multiple</strong> accounts.
@@ -124,38 +170,9 @@ const IndexPage = () => (
           alt="Screenshot when there are no notifications read"
         />
       </SectionSide>
-    </Flex>
+    </SectionRow>
 
-    <Box bg="primary" color="white">
-      <Flex flexWrap="wrap" sx={{ maxWidth: 960, mx: 'auto' }}>
-        <SectionSide
-          width={[1, 1, 5 / 12]}
-          display="flex"
-          justifyContent="center"
-          p={['1.5rem', '2rem', '3rem']}
-        >
-          <Screenshot
-            alignSelf="baseline"
-            className="img-fluid"
-            src="/images/settings.png"
-            alt="Your Preferences, Settings"
-          />
-        </SectionSide>
-
-        <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
-          <SectionTitle as="h3">It's about your preferences.</SectionTitle>
-          <Paragraph>
-            Gitify will notify you every time you receive a notification by
-            playing a sound (not an annoying one - it's a promise), showing
-            native mac OS notifications or by just turning its tray icon to
-            green. It is not there to interupt your workflow or distract you,
-            you can customize your settings to your preference.
-          </Paragraph>
-        </SectionMain>
-      </Flex>
-    </Box>
-
-    <Flex flexWrap="wrap" sx={{ maxWidth: 960, mx: 'auto' }}>
+    <SectionRow>
       <SectionMain width={[1, 1, 7 / 12]} p={[4, 4, 0]}>
         <SectionTitle as="h3">Free &amp; Open Source. It's ours.</SectionTitle>
         <Paragraph>
@@ -215,7 +232,7 @@ const IndexPage = () => (
           ))}
         </Flex>
       </SectionSide>
-    </Flex>
+    </SectionRow>
   </Layout>
 );
 

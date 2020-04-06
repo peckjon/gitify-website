@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { Footer } from './footer';
-import { GitHubRibbon } from './github-ribbon';
+import { Navbar } from './navbar';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,6 +24,7 @@ const theme = {
     successDark: '#006422',
 
     lightGray: '#f8f9fa',
+    gray: '#ACADAE',
   },
 
   buttons: {
@@ -45,6 +46,15 @@ const theme = {
         textDecoration: 'underline',
       },
     },
+
+    linkDark: {
+      color: 'gray',
+      textDecoration: 'none',
+      ':hover,:focus,.active': {
+        color: 'white',
+        textDecoration: 'underline',
+      },
+    },
   },
 };
 
@@ -52,7 +62,7 @@ export const Layout = ({ children, hideFooter }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <GitHubRibbon />
+      <Navbar />
 
       {children}
 
