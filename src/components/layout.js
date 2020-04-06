@@ -24,6 +24,7 @@ const theme = {
     successDark: '#006422',
 
     lightGray: '#f8f9fa',
+    gray: '#ACADAE',
   },
 
   buttons: {
@@ -42,6 +43,15 @@ const theme = {
       textDecoration: 'none',
       ':hover,:focus,.active': {
         color: 'primary',
+        textDecoration: 'underline',
+      },
+    },
+
+    linkDark: {
+      color: 'gray',
+      textDecoration: 'none',
+      ':hover,:focus,.active': {
+        color: 'white',
         textDecoration: 'underline',
       },
     },

@@ -11,7 +11,6 @@ const Container = styled.nav`
 
 const GithubIcon = styled(Octicon)`
   color: white;
-  font-size: 2rem;
 `;
 
 const MenuList = styled.ul`
@@ -43,7 +42,7 @@ export const Navbar = ({ location }) => {
           <li>
             <Link
               variant="link"
-              href="https://github.com/manosim/gitify/"
+              href="https://github.com/manosim/gitify"
               aria-label="GitHub Repository"
             >
               <GithubIcon Octicon icon={MarkGithub} verticalAlign="middle" />
