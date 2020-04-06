@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { Footer } from './footer';
-import { GitHubRibbon } from './github-ribbon';
+import { Navbar } from './navbar';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -52,7 +52,7 @@ export const Layout = ({ children, hideFooter }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <GitHubRibbon />
+      <Navbar />
 
       {children}
 

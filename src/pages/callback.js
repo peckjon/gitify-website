@@ -23,7 +23,7 @@ const Paragraph = styled.p`
 
 const CallbackPage = () => (
   <Layout hideFooter>
-    <SEO title="Callback - Gitify" />
+    <SEO title="Callback" />
 
     <Box display="flex" flexDirection="column" alignItems="center" py="3rem">
       <Logo

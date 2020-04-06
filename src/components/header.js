@@ -91,8 +91,7 @@ export const Header = () => {
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          px="3"
-          py="1"
+          p="1rem"
         >
           <Logo
             style={{
@@ -154,8 +153,7 @@ export const Header = () => {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          px="3"
-          py="1"
+          p="1rem"
         >
           <MockUp
             style={{
