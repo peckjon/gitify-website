@@ -70,9 +70,9 @@ export const Header = () => {
     const fetchData = async () => {
       setFailed(false);
 
-      const currentOs = Bowser.parse(window.navigator.userAgent).os.name;
+      const currentOs = Bowser.parse(window.navigator.userAgent).os.name; //
 
-      console.log({ currentOs });
+      console.log('currentOs:', currentOs);
 
       try {
         const { data } = await axios(REPO_URL);
