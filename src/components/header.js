@@ -58,7 +58,10 @@ const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
 
 const getOS = () => {
-  const currentOs = Bowser.parse(window.navigator.userAgent).os.name; // macOS, Windows, Linux
+  const isWindowAvailable = typeof window !== 'undefined' && window.navigator;
+  const currentOs = isWindowAvailable
+    ? Bowser.parse(window.navigator.userAgent).os.name
+    : 'macOS'; // macOS, Windows, Linux
   return ['macOS', 'Windows', 'Linux'].includes(currentOs)
     ? currentOs
     : 'macOS';
