@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Bowser from 'bowser';
 import styled from 'styled-components';
 import { Box, Button, Flex, Heading, Image } from 'rebass/styled-components';
 import { format, parseISO } from 'date-fns';
@@ -53,7 +54,9 @@ const MockUp = styled(Image)`
   }
 `;
 
-const FILENAME_REGEX = /Gitify-\d.\d.\d.dmg/g;
+const FILENAME_REGEX_MACOS = /Gitify-\d.\d.\d.dmg/g;
+const FILENAME_REGEX_WINDOWS = /Gitify-\d.\d.\d.exe/g;
+const FILENAME_REGEX_LINUX = /Gitify-\d.\d.\d.AppImage/g;
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
 
@@ -67,11 +70,15 @@ export const Header = () => {
     const fetchData = async () => {
       setFailed(false);
 
+      const currentOs = Bowser.parse(window.navigator.userAgent).os.name;
+
+      console.log({ currentOs });
+
       try {
         const { data } = await axios(REPO_URL);
         const parsedDate = parseISO(data.published_at.slice(0, -1));
         const asset = data.assets.find((item) =>
-          item.name.match(FILENAME_REGEX)
+          item.name.match(FILENAME_REGEX_MACOS)
         );
         setDownloadURL(asset.browser_download_url);
         setVersion(data.tag_name);
