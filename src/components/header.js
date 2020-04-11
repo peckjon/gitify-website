@@ -54,13 +54,30 @@ const MockUp = styled(Image)`
   }
 `;
 
-const FILENAME_REGEX_MACOS = /Gitify-\d.\d.\d.dmg/g;
-const FILENAME_REGEX_WINDOWS = /Gitify-\d.\d.\d.exe/g;
-const FILENAME_REGEX_LINUX = /Gitify-\d.\d.\d.AppImage/g;
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
 
+const getOS = () => {
+  const currentOs = Bowser.parse(window.navigator.userAgent).os.name; // macOS, Windows, Linux
+  return ['macOS', 'Windows', 'Linux'].includes(currentOs)
+    ? currentOs
+    : 'macOS';
+};
+
+const getFilenameRegex = (osName) => {
+  const filenameRegexes = {
+    macOS: /Gitify-\d.\d.\d.dmg/g,
+    Windows: /Gitify-\d.\d.\d.exe/g,
+    Linux: /Gitify-\d.\d.\d.AppImage/g,
+  };
+
+  return filenameRegexes[osName];
+};
+
 export const Header = () => {
+  const currentOs = getOS();
+  const filenameRegex = getFilenameRegex(currentOs);
+
   const [downloadURL, setDownloadURL] = useState(null);
   const [version, setVersion] = useState(null);
   const [releaseDate, setReleaseDate] = useState(null);
@@ -70,15 +87,13 @@ export const Header = () => {
     const fetchData = async () => {
       setFailed(false);
 
-      const currentOs = Bowser.parse(window.navigator.userAgent).os.name; //
-
       console.log('currentOs:', currentOs);
 
       try {
         const { data } = await axios(REPO_URL);
         const parsedDate = parseISO(data.published_at.slice(0, -1));
         const asset = data.assets.find((item) =>
-          item.name.match(FILENAME_REGEX_MACOS)
+          item.name.match(filenameRegex)
         );
         setDownloadURL(asset.browser_download_url);
         setVersion(data.tag_name);
@@ -128,7 +143,7 @@ export const Header = () => {
                 px={3}
                 py={2}
               >
-                <DownloadIcon icon={CloudDownload} /> macOS
+                <DownloadIcon icon={CloudDownload} /> {currentOs}
               </Button>
 
               <div>
