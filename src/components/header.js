@@ -70,8 +70,8 @@ const getOS = () => {
 const getFilenameRegex = (osName) => {
   const filenameRegexes = {
     macOS: /Gitify-\d.\d.\d.dmg/g,
-    Windows: /Gitify-\d.\d.\d.dmg/g,
-    Linux: /Gitify-\d.\d.\d.dmg/g,
+    Windows: /Gitify-\d.\d.\d.exe/g,
+    Linux: /Gitify-\d.\d.\d.AppImage/g,
   };
 
   return filenameRegexes[osName];
