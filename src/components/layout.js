@@ -46,15 +46,6 @@ const theme = {
         textDecoration: 'underline',
       },
     },
-
-    linkDark: {
-      color: 'gray',
-      textDecoration: 'none',
-      ':hover,:focus,.active': {
-        color: 'white',
-        textDecoration: 'underline',
-      },
-    },
   },
 };
 
