@@ -117,8 +117,7 @@ export const Header = () => {
         setDownloadLinks(downloadLinks);
         setVersion(data.tag_name);
         setReleaseDate(format(parsedDate, 'dd/MM/yyyy'));
-      } catch (e) {
-        console.log(e);
+      } catch (_) {
         setFailed(true);
       }
     };
