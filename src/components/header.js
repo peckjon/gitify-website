@@ -90,7 +90,8 @@ const getDownloadLinks = (assets) => {
     ? Bowser.parse(window.navigator.userAgent).os.name
     : 'macOS'; // macOS, Windows, Linux
 
-  const primary = supportedOSs.find((os) => os.name === currentOs);
+  const primary =
+    supportedOSs.find((os) => os.name === currentOs) || supportedOSs[0];
   const alt = supportedOSs.filter(
     (os) => os.name !== currentOs && os.url !== null
   );
