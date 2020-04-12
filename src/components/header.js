@@ -93,7 +93,7 @@ const getDownloadLinks = (assets) => {
   const primary =
     supportedOSs.find((os) => os.name === currentOs) || supportedOSs[0];
   const alt = supportedOSs.filter(
-    (os) => os.name !== currentOs && os.url !== null
+    (os) => os.name !== primary.name && os.url !== null
   );
   return {
     primary,
