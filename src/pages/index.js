@@ -123,10 +123,8 @@ const IndexPage = () => (
           informs you for any GitHub notifications without being annoying and of
           course without adverts. It just gets the job done. Works with GitHub
           and{' '}
-          <Link variant="linkDark" href="https://enterprise.github.com/">
-            GitHub Enterprise
-          </Link>
-          . You can even connect <strong>multiple</strong> accounts.
+          <Link href="https://enterprise.github.com/">GitHub Enterprise</Link>.
+          You can even connect <strong>multiple</strong> accounts.
         </Paragraph>
       </SectionMain>
 

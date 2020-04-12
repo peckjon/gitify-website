@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Bowser from 'bowser';
 import styled from 'styled-components';
-import { Box, Button, Flex, Heading, Image } from 'rebass/styled-components';
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Link,
+  Image,
+} from 'rebass/styled-components';
 import { format, parseISO } from 'date-fns';
 import Octicon, { CloudDownload } from '@primer/octicons-react';
 
@@ -53,12 +61,48 @@ const MockUp = styled(Image)`
   }
 `;
 
-const FILENAME_REGEX = /Gitify-\d.\d.\d.dmg/g;
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
 
+const getDownloadLinks = (assets) => {
+  const getAssetLink = (filenameRegex) => {
+    const asset = assets.find((item) => item.name.match(filenameRegex));
+    return asset ? asset.browser_download_url : null;
+  };
+
+  const supportedOSs = [
+    {
+      name: 'macOS',
+      url: getAssetLink(/Gitify-\d.\d.\d.dmg/g),
+    },
+    {
+      name: 'Windows',
+      url: getAssetLink(/Gitify-\d.\d.\d.exe/g),
+    },
+    {
+      name: 'Linux',
+      url: getAssetLink(/Gitify-\d.\d.\d.AppImage/g),
+    },
+  ];
+
+  const isWindowAvailable = typeof window !== 'undefined' && window.navigator;
+  const currentOs = isWindowAvailable
+    ? Bowser.parse(window.navigator.userAgent).os.name
+    : 'macOS'; // macOS, Windows, Linux
+
+  const primary =
+    supportedOSs.find((os) => os.name === currentOs) || supportedOSs[0];
+  const alt = supportedOSs.filter(
+    (os) => os.name !== currentOs && os.url !== null
+  );
+  return {
+    primary,
+    alt,
+  };
+};
+
 export const Header = () => {
-  const [downloadURL, setDownloadURL] = useState(null);
+  const [downloadLinks, setDownloadLinks] = useState(null);
   const [version, setVersion] = useState(null);
   const [releaseDate, setReleaseDate] = useState(null);
   const [failed, setFailed] = useState(false);
@@ -70,10 +114,8 @@ export const Header = () => {
       try {
         const { data } = await axios(REPO_URL);
         const parsedDate = parseISO(data.published_at.slice(0, -1));
-        const asset = data.assets.find((item) =>
-          item.name.match(FILENAME_REGEX)
-        );
-        setDownloadURL(asset.browser_download_url);
+        const downloadLinks = getDownloadLinks(data.assets);
+        setDownloadLinks(downloadLinks);
         setVersion(data.tag_name);
         setReleaseDate(format(parsedDate, 'dd/MM/yyyy'));
       } catch (_) {
@@ -115,18 +157,32 @@ export const Header = () => {
             <ReleaseDetails>
               <Button
                 as="a"
-                href={downloadURL}
+                href={downloadLinks.primary.url}
                 variant="success"
                 mb={3}
                 px={3}
                 py={2}
               >
-                <DownloadIcon icon={CloudDownload} /> macOS
+                <DownloadIcon icon={CloudDownload} />{' '}
+                {downloadLinks.primary.name}
               </Button>
 
               <div>
                 <div>Current Version: {version}.</div>
                 <div>Released on {releaseDate}.</div>
+                {downloadLinks.alt.length > 0 && (
+                  <div>
+                    Also available on{' '}
+                    {downloadLinks.alt
+                      .map((platform) => (
+                        <Link key={platform.name} href={platform.url}>
+                          {platform.name}
+                        </Link>
+                      ))
+                      .reduce((prev, next) => [prev, ', ', next])}
+                    .
+                  </div>
+                )}
               </div>
             </ReleaseDetails>
           )}
