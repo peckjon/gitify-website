@@ -91,7 +91,9 @@ const getDownloadLinks = (assets) => {
     : 'macOS'; // macOS, Windows, Linux
 
   const primary =
-    supportedOSs.find((os) => os.name === currentOs) || supportedOSs[0];
+    supportedOSs
+      .filter((os) => os.url !== null)
+      .find((os) => os.name === currentOs) || supportedOSs[0];
   const alt = supportedOSs.filter(
     (os) => os.name !== primary.name && os.url !== null
   );
