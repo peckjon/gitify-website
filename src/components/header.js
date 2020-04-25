@@ -77,7 +77,7 @@ const getDownloadLinks = (assets) => {
     },
     {
       name: 'Windows',
-      url: getAssetLink(/Gitify-\d.\d.\d.exe/g),
+      url: getAssetLink(/Gitify-Setup-\d.\d.\d.exe/g),
     },
     {
       name: 'Linux',
