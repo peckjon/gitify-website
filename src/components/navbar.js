@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Octicon, { MarkGithub } from '@primer/octicons-react';
-import { Flex, Link } from 'rebass/styled-components';
+import { Flex, Link as RebassLink } from 'rebass/styled-components';
 
 import { Logo } from './logo';
 
@@ -17,14 +18,21 @@ const MenuList = styled.ul`
   display: flex;
   flex-direction: row;
   list-style: none;
+
+  padding-left: 0;
+`;
+const MenuListItem = styled.li`
+  text-align: center;
 `;
 
 export const Navbar = ({ location }) => {
   return (
     <Container>
       <Flex
+        flexDirection={['column', 'column', 'row']}
         alignItems="center"
         justifyContent="space-between"
+        justifyContent={['center', 'center', 'space-between']}
         sx={{ maxWidth: 960, mx: 'auto' }}
         px="2rem"
         py={2}
@@ -39,15 +47,27 @@ export const Navbar = ({ location }) => {
         </a>
 
         <MenuList>
-          <li>
-            <Link
-              variant="link"
+          <MenuListItem>
+            <RebassLink variant="navbarLink" as={Link} to="/">
+              Home
+            </RebassLink>
+          </MenuListItem>
+
+          <MenuListItem>
+            <RebassLink variant="navbarLink" as={Link} to="/faq">
+              Frequently Asked Questions
+            </RebassLink>
+          </MenuListItem>
+
+          <MenuListItem>
+            <RebassLink
+              variant="navbarLink"
               href="https://github.com/manosim/gitify"
               aria-label="GitHub Repository"
             >
-              <GithubIcon Octicon icon={MarkGithub} verticalAlign="middle" />
-            </Link>
-          </li>
+              Github
+            </RebassLink>
+          </MenuListItem>
         </MenuList>
       </Flex>
     </Container>

@@ -46,6 +46,20 @@ const theme = {
         textDecoration: 'underline',
       },
     },
+    navbarLink: {
+      display: 'inline-block',
+      color: 'white',
+      textDecoration: 'none',
+      fontSize: '0.95rem',
+
+      marginLeft: ['0.75rem', '1rem', '1.25rem'],
+      marginRight: ['0.75rem', '1rem', '1.25rem'],
+
+      ':hover,:focus,.active': {
+        color: 'gray',
+        textDecoration: 'none',
+      },
+    },
   },
 };
 
