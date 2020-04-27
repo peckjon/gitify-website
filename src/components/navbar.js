@@ -13,7 +13,6 @@ const MenuList = styled.ul`
   display: flex;
   flex-direction: row;
   list-style: none;
-
   padding-left: 0;
 `;
 const MenuListItem = styled.li`
@@ -29,7 +28,7 @@ export const Navbar = ({ location }) => {
         justifyContent={['center', 'center', 'space-between']}
         sx={{ maxWidth: 960, mx: 'auto' }}
         px="2rem"
-        py={2}
+        py={['1.25rem', '1.25rem', '0.75rem']}
       >
         <a href="/">
           <Logo
@@ -49,7 +48,7 @@ export const Navbar = ({ location }) => {
 
           <MenuListItem>
             <RebassLink variant="navbarLink" as={Link} to="/faq">
-              Frequently Asked Questions
+              FAQs
             </RebassLink>
           </MenuListItem>
 
