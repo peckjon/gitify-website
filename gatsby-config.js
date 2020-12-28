@@ -5,10 +5,20 @@ module.exports = {
     description: `Your GitHub notifications on your menu bar.`,
     keywords: `gitify,mobile,desktop,application,github,notifications,unread,menu bar,electron,open source,ekonstantinidis,manosim,mac,osx`,
     author: `@manosim_`,
+    menuLinks: [
+      {
+        name: 'Home',
+        path: '/',
+      },
+      {
+        name: 'FAQs',
+        path: '/faq',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

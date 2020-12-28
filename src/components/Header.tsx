@@ -1,65 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Bowser from 'bowser';
-import styled from 'styled-components';
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Link,
-  Image,
-} from 'rebass/styled-components';
 import { format, parseISO } from 'date-fns';
-import Octicon, { CloudDownload } from '@primer/octicons-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { Logo } from './logo';
-
-const Container = styled(Box)`
-  background: rgb(242, 244, 248);
-  background: linear-gradient(
-    148deg,
-    rgba(242, 244, 248, 1) 0%,
-    rgba(213, 220, 235, 1) 100%
-  );
-  color: ${(props) => props.theme.colors.primary};
-  padding: 3rem 0.5rem;
-`;
-
-const SiteTitle = styled(Heading)`
-  font-size: 2.85rem;
-  font-weight: 500;
-  line-height: 3.25rem;
-  margin-top: 0;
-  margin-bottom: 0;
-`;
-
-const SiteDesc = styled(Heading)`
-  margin-top: 0.75rem;
-  margin-bottom: 0;
-  font-size: 2.25rem;
-  line-height: 2.85rem;
-  font-weight: 300;
-`;
-
-const ReleaseDetails = styled.div`
-  margin-top: 1rem;
-  font-size: 0.8rem;
-`;
-
-const DownloadIcon = styled(Octicon)`
-  margin-right: 0.5rem;
-`;
-
-const MockUp = styled(Image)`
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-  @media (min-width: 768px) {
-    transform: rotate(10deg);
-  }
-`;
+import { Logo } from './Logo';
 
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
@@ -103,6 +49,8 @@ const getDownloadLinks = (assets) => {
   };
 };
 
+const releaseDetailsClassName = 'text-sm mt-4';
+
 export const Header = () => {
   const [downloadLinks, setDownloadLinks] = useState(null);
   const [version, setVersion] = useState(null);
@@ -128,46 +76,26 @@ export const Header = () => {
   }, []);
 
   return (
-    <Container width={[1, 1, 1]}>
-      <Flex
-        flexWrap="wrap"
-        sx={{ maxWidth: 960, mx: 'auto' }}
-        px={['1rem', '2rem', '2rem']}
-      >
-        <Box
-          width={[1, 1, 1 / 2]}
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          p="1rem"
-        >
-          <Logo
-            style={{
-              maxWidth: '5rem',
-              margin: '0 0 1rem',
-            }}
-            isDark
-          />
+    <div className="bg-gradient-to-tr from-gray-200 to-gray-100">
+      <div className="container flex flex-col md:flex-row items-center max-w-5xl mx-auto px-12 py-16">
+        <div className="flex-grow">
+          <Logo className="w-24 mb-4" isDark />
 
-          <SiteTitle as="h1">Gitify</SiteTitle>
+          <h1 className="text-4xl font-semibold">Gitify</h1>
 
-          <SiteDesc as="h4">
+          <h4 className="mt-2 text-3xl font-light">
             Your GitHub notifications <br /> on your menu bar.
-          </SiteDesc>
+          </h4>
 
           {!failed && version && (
-            <ReleaseDetails>
-              <Button
-                as="a"
+            <div className={releaseDetailsClassName}>
+              <a
                 href={downloadLinks.primary.url}
-                variant="success"
-                mb={3}
-                px={3}
-                py={2}
+                className="inline-block mb-3 px-3 py-2 font-semibold text-white rounded-md bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600"
               >
-                <DownloadIcon icon={CloudDownload} />{' '}
+                <FontAwesomeIcon className="mr-2" icon={faCloudDownloadAlt} />{' '}
                 {downloadLinks.primary.name}
-              </Button>
+              </a>
 
               <div>
                 <div>Current Version: {version}.</div>
@@ -177,57 +105,42 @@ export const Header = () => {
                     Also available on{' '}
                     {downloadLinks.alt
                       .map((platform) => (
-                        <Link key={platform.name} href={platform.url}>
+                        <a key={platform.name} href={platform.url}>
                           {platform.name}
-                        </Link>
+                        </a>
                       ))
                       .reduce((prev, next) => [prev, ', ', next])}
                     .
                   </div>
                 )}
               </div>
-            </ReleaseDetails>
+            </div>
           )}
 
           {failed && (
-            <ReleaseDetails>
+            <div className={releaseDetailsClassName}>
               <div>
-                <Button
-                  as="a"
+                <a
+                  className="inline-block mb-3 px-3 py-2 font-semibold text-white rounded-md bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600"
                   href={REPO_RELEASES_URL}
-                  variant="success"
-                  mb={3}
-                  px={3}
-                  py={2}
                 >
                   View GitHub Releases
-                </Button>
+                </a>
 
                 <div>Couldn't get latest version.</div>
               </div>
-            </ReleaseDetails>
+            </div>
           )}
-        </Box>
+        </div>
 
-        <Box
-          width={[1, 1, 1 / 2]}
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-          p="1rem"
-        >
-          <MockUp
-            style={{
-              width: '25rem',
-              margin: '2rem 0',
-            }}
-            id="screenshot"
+        <div className="">
+          <img
+            className="block w-full max-w-sm mx-auto h-auto shadow-2xl rounded-xl transform rotate-6 mt-16 mb-8 md:ml-16 md:my-16"
             src="/images/mockup.png"
-            alt="Gitify Desktop App"
+            alt="Gitify - Mock up/Screenshot"
           />
-        </Box>
-      </Flex>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };

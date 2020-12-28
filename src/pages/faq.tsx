@@ -1,9 +1,8 @@
 import React from 'react';
-import { Flex } from 'rebass/styled-components';
-import styled from 'styled-components';
+import { WindowLocation } from '@reach/router';
 
-import { Layout } from '../components/layout';
-import { SEO } from '../components/seo';
+import { Layout } from '../components/Layout';
+import { SEO } from '../components/Seo';
 
 // prettier-ignore
 const content = [
@@ -19,43 +18,23 @@ const content = [
   },
 ];
 
-const Title = styled.h3`
-  font-size: 2.85rem;
-  font-weight: 300;
-
-  line-height: 3.25rem;
-  margin-bottom: 0.55rem;
-`;
-
-const Question = styled.h3`
-  font-weight: 700;
-  margin-top: 1.25rem;
-`;
-
-const Answer = styled.div`
-  font-size: 1.15rem;
-`;
-
-const CallbackPage = () => (
-  <Layout>
+const FAQPage = ({ location }: { location: WindowLocation }) => (
+  <Layout location={location}>
     <SEO title="Frequently Asked Questions" />
 
-    <Flex
-      flexDirection="column"
-      sx={{ maxWidth: 960, mx: 'auto' }}
-      px={3}
-      mb={5}
-    >
-      <Title>Frequently Asked Questions</Title>
+    <div className="container max-w-4xl mx-auto px-12 flex-1">
+      <div className="text-3xl text-center mt-12 mb-8">
+        Frequently Asked Questions
+      </div>
 
       {content.map((item) => (
-        <div key={item.id}>
-          <Question>{item.question}</Question>
-          <Answer>{item.answer}</Answer>
+        <div className="mb-8 text-xl" key={item.id}>
+          <div className="font-semibold mb-2">{item.question}</div>
+          <div className="">{item.answer}</div>
         </div>
       ))}
-    </Flex>
+    </div>
   </Layout>
 );
 
-export default CallbackPage;
+export default FAQPage;
