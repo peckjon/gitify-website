@@ -11,7 +11,7 @@ module.exports = {
         path: '/',
       },
       {
-        name: 'FAQs',
+        name: 'FAQ',
         path: '/faq',
       },
     ],

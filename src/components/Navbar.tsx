@@ -34,10 +34,10 @@ export const Navbar = ({ location }: { location: WindowLocation }) => {
             {data.site.siteMetadata.menuLinks.map((item) => (
               <li key={item.name.toLowerCase()}>
                 <Link
-                  className={`px-2 py-3 font-semibold ${
+                  className={`py-2 mx-3.5 font-light ${
                     location.pathname === item.path
-                      ? 'text-gray-200'
-                      : 'text-white'
+                      ? 'border-b-2 border-white text-white'
+                      : 'text-gray-200'
                   } hover:text-gray-300`}
                   to={item.path}
                 >
