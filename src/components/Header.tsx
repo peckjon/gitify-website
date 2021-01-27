@@ -10,22 +10,40 @@ import { Logo } from './Logo';
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
 
-const getDownloadLinks = (assets) => {
+interface DownloadLink {
+  os: string;
+  name: string;
+  url: string;
+}
+interface DownloadLinks {
+  primary: DownloadLink[];
+  alt: DownloadLink[];
+}
+
+const getDownloadLinks = (assets): DownloadLinks => {
   const getAssetLink = (filenameRegex) => {
     const asset = assets.find((item) => item.name.match(filenameRegex));
     return asset ? asset.browser_download_url : null;
   };
 
-  const supportedOSs = [
+  const supportedOSs: DownloadLink[] = [
     {
+      os: 'macOS',
       name: 'macOS',
       url: getAssetLink(/Gitify-\d.\d.\d.dmg/g),
     },
     {
+      os: 'macOS',
+      name: 'macOS (Apple Silicon)',
+      url: getAssetLink(/Gitify-\d.\d.\d-arm64.dmg/g),
+    },
+    {
+      os: 'Windows',
       name: 'Windows',
       url: getAssetLink(/Gitify-Setup-\d.\d.\d.exe/g),
     },
     {
+      os: 'Linux',
       name: 'Linux',
       url: getAssetLink(/Gitify-\d.\d.\d.AppImage/g),
     },
@@ -36,15 +54,16 @@ const getDownloadLinks = (assets) => {
     ? Bowser.parse(window.navigator.userAgent).os.name
     : 'macOS'; // macOS, Windows, Linux
 
-  const primary =
-    supportedOSs
-      .filter((os) => os.url !== null)
-      .find((os) => os.name === currentOs) || supportedOSs[0];
-  const alt = supportedOSs.filter(
-    (os) => os.name !== primary.name && os.url !== null
+  const primaryLinks = supportedOSs.filter(
+    ({ os, url }) => url && os === currentOs
   );
+  const primaryLinksOSs = primaryLinks.map(({ os }) => os);
+  const alt = supportedOSs.filter(
+    ({ os, url }) => !primaryLinksOSs.includes(os) && url
+  );
+
   return {
-    primary,
+    primary: primaryLinks.length ? primaryLinks : [supportedOSs[0]],
     alt,
   };
 };
@@ -52,7 +71,7 @@ const getDownloadLinks = (assets) => {
 const releaseDetailsClassName = 'text-sm mt-4';
 
 export const Header = () => {
-  const [downloadLinks, setDownloadLinks] = useState(null);
+  const [downloadLinks, setDownloadLinks] = useState<DownloadLinks>(null);
   const [version, setVersion] = useState(null);
   const [releaseDate, setReleaseDate] = useState(null);
   const [failed, setFailed] = useState(false);
@@ -89,13 +108,26 @@ export const Header = () => {
 
           {!failed && version && (
             <div className={releaseDetailsClassName}>
-              <a
-                href={downloadLinks.primary.url}
-                className="inline-block mb-3 px-3 py-2 font-semibold text-white rounded-md bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600"
-              >
-                <FontAwesomeIcon className="mr-2" icon={faCloudDownloadAlt} />{' '}
-                {downloadLinks.primary.name}
-              </a>
+              {downloadLinks.primary.map((item, index) => {
+                return (
+                  <a
+                    key={item.name.toLocaleLowerCase().replace(' ', '_')}
+                    href={item.url}
+                    className={`inline-block mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-600 hover:bg-green-700 ${
+                      downloadLinks.primary.length > 1 &&
+                      downloadLinks.primary.length - 1 === index
+                        ? 'md:ml-4'
+                        : ''
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      className="mr-2"
+                      icon={faCloudDownloadAlt}
+                    />{' '}
+                    {item.name}
+                  </a>
+                );
+              })}
 
               <div>
                 <div>Current Version: {version}.</div>
@@ -105,7 +137,12 @@ export const Header = () => {
                     Also available on{' '}
                     {downloadLinks.alt
                       .map((platform) => (
-                        <a key={platform.name} href={platform.url}>
+                        <a
+                          key={platform.name
+                            .toLocaleLowerCase()
+                            .replace(' ', '_')}
+                          href={platform.url}
+                        >
                           {platform.name}
                         </a>
                       ))
