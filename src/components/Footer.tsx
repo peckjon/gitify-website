@@ -1,9 +1,13 @@
 import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-export const Footer = ({ location }) => {
-  const isHomepage = location && location.pathname === '/';
+export const Footer: React.FC = () => {
+  const router = useRouter();
+
+  const isHomepage = router.pathname === '/';
 
   return (
     <div
@@ -11,21 +15,19 @@ export const Footer = ({ location }) => {
         isHomepage ? 'mt-0' : 'mt-12'
       }`}
     >
-      <div className="container mx-auto flex flex-col item-center text-center">
-        <div className="mt-1 mb-4">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/manosim/gitify/"
-            aria-label="GitHub"
-            className="text-white hover:text-gray-400 mx-2 p-1"
-          >
-            <FontAwesomeIcon icon={faGithub} fixedWidth className="text-2xl" />
-          </a>
-        </div>
+      <div className="container mx-auto flex flex-col items-center text-center">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/manosim/gitify/"
+          aria-label="GitHub"
+          className="mt-1 mb-4 mx-2 p-1 text-white hover:text-gray-400"
+        >
+          <FontAwesomeIcon icon={faGithub} fixedWidth className="w-6" />
+        </a>
 
         <div className="my-3">
-          Copyright © <a href="/">Gitify</a> {new Date().getFullYear()}.
+          Copyright © <Link href="/">Gitify</Link> {new Date().getFullYear()}.
           Developed by{' '}
           <a
             target="_blank"
@@ -34,7 +36,7 @@ export const Footer = ({ location }) => {
             aria-label="Link to personal website"
             className="hover:text-gray-400"
           >
-            Emmanouil Konstantinidis
+            Manos Konstantinidis
           </a>
           .
         </div>

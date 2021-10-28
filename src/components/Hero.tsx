@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { Logo } from './Logo';
+import { Assets, LatestRelease } from '../types';
 
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
@@ -13,15 +14,15 @@ const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
 interface DownloadLink {
   os: string;
   name: string;
-  url: string;
+  url: string | null;
 }
 interface DownloadLinks {
   primary: DownloadLink[];
   alt: DownloadLink[];
 }
 
-const getDownloadLinks = (assets): DownloadLinks => {
-  const getAssetLink = (filenameRegex) => {
+const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
+  const getAssetLink = (filenameRegex: RegExp): string | null => {
     const asset = assets.find((item) => item.name.match(filenameRegex));
     return asset ? asset.browser_download_url : null;
   };
@@ -29,13 +30,8 @@ const getDownloadLinks = (assets): DownloadLinks => {
   const supportedOSs: DownloadLink[] = [
     {
       os: 'macOS',
-      name: 'macOS',
-      url: getAssetLink(/Gitify-\d.\d.\d.dmg/g),
-    },
-    {
-      os: 'macOS',
-      name: 'macOS (Apple Silicon)',
-      url: getAssetLink(/Gitify-\d.\d.\d-arm64.dmg/g),
+      name: 'macOS (Universal)',
+      url: getAssetLink(/Gitify-\d.\d.\d-universal.dmg/g),
     },
     {
       os: 'Windows',
@@ -70,10 +66,10 @@ const getDownloadLinks = (assets): DownloadLinks => {
 
 const releaseDetailsClassName = 'text-sm mt-4';
 
-export const Header = () => {
-  const [downloadLinks, setDownloadLinks] = useState<DownloadLinks>(null);
-  const [version, setVersion] = useState(null);
-  const [releaseDate, setReleaseDate] = useState(null);
+export const Hero = () => {
+  const [downloadLinks, setDownloadLinks] = useState<DownloadLinks>(undefined!);
+  const [version, setVersion] = useState<string>();
+  const [releaseDate, setReleaseDate] = useState<string>();
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -81,7 +77,8 @@ export const Header = () => {
       setFailed(false);
 
       try {
-        const { data } = await axios(REPO_URL);
+        const response = await axios(REPO_URL);
+        const data: LatestRelease = response.data;
         const parsedDate = parseISO(data.published_at.slice(0, -1));
         const downloadLinks = getDownloadLinks(data.assets);
         setDownloadLinks(downloadLinks);
@@ -108,26 +105,28 @@ export const Header = () => {
 
           {!failed && version && (
             <div className={releaseDetailsClassName}>
-              {downloadLinks.primary.map((item, index) => {
-                return (
-                  <a
-                    key={item.name.toLocaleLowerCase().replace(' ', '_')}
-                    href={item.url}
-                    className={`inline-block mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-600 hover:bg-green-700 ${
-                      downloadLinks.primary.length > 1 &&
-                      downloadLinks.primary.length - 1 === index
-                        ? 'md:ml-4'
-                        : ''
-                    }`}
-                  >
-                    <FontAwesomeIcon
-                      className="mr-2"
-                      icon={faCloudDownloadAlt}
-                    />{' '}
-                    {item.name}
-                  </a>
-                );
-              })}
+              <div className="flex">
+                {downloadLinks.primary.map((item, index) => {
+                  return item.url ? (
+                    <a
+                      key={item.name.toLocaleLowerCase().replace(' ', '_')}
+                      href={item.url}
+                      className={`flex mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-600 hover:bg-green-700 ${
+                        downloadLinks.primary.length > 1 &&
+                        downloadLinks.primary.length - 1 === index
+                          ? 'md:ml-4'
+                          : ''
+                      }`}
+                    >
+                      <FontAwesomeIcon
+                        className="w-4 mr-2"
+                        icon={faCloudDownloadAlt}
+                      />{' '}
+                      <span>{item.name}</span>
+                    </a>
+                  ) : null;
+                })}
+              </div>
 
               <div>
                 <div>Current Version: {version}.</div>
@@ -141,12 +140,12 @@ export const Header = () => {
                           key={platform.name
                             .toLocaleLowerCase()
                             .replace(' ', '_')}
-                          href={platform.url}
+                          href={platform.url!}
                         >
                           {platform.name}
                         </a>
                       ))
-                      .reduce((prev, next) => [prev, ', ', next])}
+                      .reduce((prev, next) => [prev, ', ', next] as any)}
                     .
                   </div>
                 )}
@@ -164,7 +163,7 @@ export const Header = () => {
                   View GitHub Releases
                 </a>
 
-                <div>Couldn't get latest version.</div>
+                <div>Couldn&apos;t get latest version.</div>
               </div>
             </div>
           )}

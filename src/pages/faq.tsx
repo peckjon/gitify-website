@@ -1,8 +1,6 @@
 import React from 'react';
-import { WindowLocation } from '@reach/router';
 
 import { Layout } from '../components/Layout';
-import { SEO } from '../components/Seo';
 
 // prettier-ignore
 const content = [
@@ -18,10 +16,8 @@ const content = [
   },
 ];
 
-const FAQPage = ({ location }: { location: WindowLocation }) => (
-  <Layout location={location}>
-    <SEO title="Frequently Asked Questions" />
-
+const FAQPage: React.FC = () => (
+  <Layout pageTitle="Frequently Asked Questions">
     <div className="container max-w-4xl mx-auto px-12 flex-1">
       <div className="text-3xl text-center mt-12 mb-8">
         Frequently Asked Questions

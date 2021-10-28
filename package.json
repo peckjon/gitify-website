@@ -1,56 +1,42 @@
 {
   "name": "gitify-website",
-  "private": true,
+  "version": "3.1.0",
   "description": "The website of gitify",
-  "version": "3.0.0",
   "author": "Emmanouil Konstantinidis <hello@manos.im>",
+  "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "prettier:check": "prettier --check 'src/**/*.{js,ts,tsx}'",
-    "prettier:apply": "prettier --write 'src/**/*.{js,ts,tsx}'",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "prettier:apply": "prettier --write 'src/**/*.{js,ts,tsx}'"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/manosim/gitify-website"
-  },
-  "bugs": {
-    "url": "https://github.com/manosim/gitify-website/issues"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "autoprefixer": "^10.1.0",
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "bowser": "^2.11.0",
-    "date-fns": "^2.16.1",
-    "gatsby": "^2.29.2",
-    "gatsby-image": "^2.8.0",
-    "gatsby-plugin-google-analytics": "^2.8.0",
-    "gatsby-plugin-manifest": "^2.9.1",
-    "gatsby-plugin-postcss": "^3.4.0",
-    "gatsby-plugin-react-helmet": "^3.7.0",
-    "gatsby-plugin-sitemap": "^2.9.0",
-    "postcss": "^8.2.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0",
-    "tailwindcss": "^2.0.2"
+    "date-fns": "^2.25.0",
+    "next": "12.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/reach__router": "^1.3.6",
-    "@types/react-helmet": "^6.1.0",
-    "prettier": "^2.2.1"
+    "@types/node": "16.11.6",
+    "@types/react": "17.0.33",
+    "autoprefixer": "^10.4.0",
+    "eslint": "7",
+    "eslint-config-next": "12.0.1",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17",
+    "typescript": "4.4.4"
   }
 }
