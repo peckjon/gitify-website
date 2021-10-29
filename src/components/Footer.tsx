@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
+import { GithubIcon } from '../icons/Github';
 
 export const Footer: React.FC = () => {
   const router = useRouter();
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
           aria-label="GitHub"
           className="mt-1 mb-4 mx-2 p-1 text-white hover:text-gray-400"
         >
-          <FontAwesomeIcon icon={faGithub} fixedWidth className="w-6" />
+          <GithubIcon className="w-6" />
         </a>
 
         <div className="my-3">

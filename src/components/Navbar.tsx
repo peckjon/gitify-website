@@ -1,19 +1,18 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Logo } from './Logo';
 
 import { siteMetadata } from '../constants';
+import { GithubIcon } from '../icons/Github';
 
 export const Navbar: React.FC = () => {
   const router = useRouter();
 
   return (
     <nav className="bg-gray-navbar">
-      <div className="container max-w-5xl mx-auto flex items-center justify-between px-12 py-2">
+      <div className="container max-w-5xl mx-auto flex items-center justify-between px-12 py-6">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <Link href="/">
             <a>
@@ -42,11 +41,11 @@ export const Navbar: React.FC = () => {
 
             <li>
               <a
-                className="ml-2 px-2 text-white hover:text-gray-300"
+                className="flex flex-1 py-2 px-2 text-white hover:text-gray-300"
                 rel="noopener noreferrer"
                 href="https://github.com/manosim/gitify/"
               >
-                <FontAwesomeIcon icon={faGithub} />
+                <GithubIcon className="w-4 h-4" />
               </a>
             </li>
           </ul>

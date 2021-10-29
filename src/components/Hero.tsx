@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Bowser from 'bowser';
 import { format, parseISO } from 'date-fns';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { Logo } from './Logo';
 import { Assets, LatestRelease } from '../types';
+import { DownloadIcon } from '../icons/Download';
 
 const REPO_URL = 'https://api.github.com/repos/manosim/gitify/releases/latest';
 const REPO_RELEASES_URL = 'https://github.com/manosim/gitify/releases/latest';
@@ -111,17 +110,14 @@ export const Hero = () => {
                     <a
                       key={item.name.toLocaleLowerCase().replace(' ', '_')}
                       href={item.url}
-                      className={`flex mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-600 hover:bg-green-700 ${
+                      className={`flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-600 hover:bg-green-700 ${
                         downloadLinks.primary.length > 1 &&
                         downloadLinks.primary.length - 1 === index
                           ? 'md:ml-4'
                           : ''
                       }`}
                     >
-                      <FontAwesomeIcon
-                        className="w-4 mr-2"
-                        icon={faCloudDownloadAlt}
-                      />{' '}
+                      <DownloadIcon className="w-4 h-4 mr-2" />{' '}
                       <span>{item.name}</span>
                     </a>
                   ) : null;
