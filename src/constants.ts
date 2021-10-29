@@ -23,6 +23,6 @@ export const GA_ID = 'UA-67298362-1';
 export const manifest = {
   name: `Gitify`,
   short_name: `starter`,
-  themeColor: `#203354`,
+  themeColor: `#24292e`,
   display: `minimal-ui`,
 };
