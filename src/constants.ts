@@ -1,5 +1,4 @@
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+export const SITE_URL = import.meta.env.SITE_URL || 'http://localhost:3000';
 
 export const siteMetadata = {
   title: `Gitify`,
@@ -17,8 +16,6 @@ export const siteMetadata = {
     },
   ],
 };
-
-export const GA_ID = 'UA-67298362-1';
 
 export const manifest = {
   name: `Gitify`,

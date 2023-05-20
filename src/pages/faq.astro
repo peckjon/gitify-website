@@ -1,0 +1,37 @@
+---
+import { marked } from 'marked';
+import Layout from '../layouts/Layout.astro';
+
+marked.use({ headerIds: false, mangle: false });
+
+// prettier-ignore
+const content = [
+  {
+    id: '1',
+    question: "My notifications aren't showing?",
+    answer: `Some organisations require applications to request access before allowing access to any data (including notifications) about their repositories. To check if Gitify is approved by your organisation you can go to [settings](https://github.com/settings/applications), then click on **Gitify** and scroll to **Organization access**.`,
+  },
+  {
+    id: '2',
+    question: "Something looks wrong - How can I debug?",
+    answer: `You can debug Gitify by pressing alt + command + I. This will open the dev tools and then you can see any logs, network requests etc.`,
+  },
+];
+---
+
+<Layout title="Frequently Asked Questions">
+  <div class="container max-w-4xl mx-auto px-12 flex-1">
+    <div class="text-3xl text-center mt-12 mb-8">
+      Frequently Asked Questions
+    </div>
+
+    {
+      content.map((item) => (
+        <div class="mb-8 text-xl">
+          <div class="font-semibold mb-2">{item.question}</div>
+          <div class="prose lg:prose-xl" set:html={marked.parse(item.answer)} />
+        </div>
+      ))
+    }
+  </div>
+</Layout>
