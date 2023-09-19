@@ -1,11 +1,14 @@
 ---
 import { marked } from 'marked';
+import { Image } from 'astro:assets';
 
 export interface Props {
   title: string;
   description: string;
-  screenshotPath?: string;
-  screenshotAlt?: string;
+  screenshot?: {
+    path: string;
+    alt: string;
+  };
   isDark?: boolean;
   isReversed?: boolean;
 }
@@ -13,8 +16,7 @@ export interface Props {
 const {
   title,
   description,
-  screenshotPath,
-  screenshotAlt,
+  screenshot,
   isDark = false,
   isReversed = false,
 } = Astro.props;
@@ -42,13 +44,13 @@ const {
     </div>
 
     {
-      screenshotPath && (
-        <img
+      screenshot && (
+        <Image
           class="w-full lg:w-96 max-w-md rounded-lg shadow-lg transform -rotate-6 mt-16 lg:mt-0 mb-8 lg:mb-0"
           width="500"
           height="400"
-          src={screenshotPath}
-          alt={screenshotAlt}
+          src={import(`../assets/${screenshot.path}.png`)}
+          alt={screenshot.alt}
         />
       )
     }

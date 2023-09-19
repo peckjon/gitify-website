@@ -6,6 +6,9 @@ import { format, parseISO } from 'date-fns';
 import Logo from './Logo.astro';
 import DownloadIcon from '../icons/Download.astro';
 import type { Assets, LatestRelease } from '../types';
+import { Image } from 'astro:assets';
+
+import mockup from '../assets/mockup.png';
 
 const REPO_URL =
   'https://api.github.com/repos/gitify-app/gitify/releases/latest';
@@ -53,11 +56,11 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
     : 'macOS'; // macOS, Windows, Linux
 
   const primaryLinks = supportedOSs.filter(
-    ({ os, url }) => url && os === currentOs
+    ({ os, url }) => url && os === currentOs,
   );
   const primaryLinksOSs = primaryLinks.map(({ os }) => os);
   const alt = supportedOSs.filter(
-    ({ os, url }) => !primaryLinksOSs.includes(os) && url
+    ({ os, url }) => !primaryLinksOSs.includes(os) && url,
   );
 
   return {
@@ -176,9 +179,9 @@ const releaseDetailsClassName = 'text-sm mt-4';
     </div>
 
     <div class="">
-      <img
+      <Image
         class="block w-full max-w-sm mx-auto h-auto shadow-2xl rounded-xl transform rotate-6 mt-16 mb-8 md:ml-16 md:my-16"
-        src="/images/mockup.png"
+        src={mockup}
         alt="Gitify - Mock up/Screenshot"
         width="500"
         height="400"
