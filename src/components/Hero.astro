@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import Logo from './Logo.astro';
 
 import mockup from '../assets/mockup.png';
-import { LatestRelease } from './LatestRelease';
+import LatestRelease from './LatestRelease.astro';
 ---
 
 <div class="bg-gray-100">
@@ -19,7 +19,7 @@ import { LatestRelease } from './LatestRelease';
         Your GitHub notifications <br /> on your menu bar.
       </h2>
 
-      <LatestRelease client:only />
+      <LatestRelease />
     </div>
 
     <div class="">
