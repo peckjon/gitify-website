@@ -20,19 +20,21 @@
     "url": "https://github.com/manosim/gitify-website"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/solid-js": "^3.0.2",
+    "@astrojs/tailwind": "^5.0.3",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^3.1.2",
-    "axios": "^1.5.0",
+    "astro": "^4.0.3",
+    "axios": "^1.6.2",
     "bowser": "^2.11.0",
     "date-fns": "^2.30.0",
     "marked": "^11.0.0",
     "sharp": "^0.33.0",
-    "tailwindcss": "^3.3.3"
+    "solid-js": "^1.8.7",
+    "tailwindcss": "^3.3.6"
   },
   "devDependencies": {
-    "@types/marked": "^5.0.1",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0"
+    "@types/marked": "^5.0.2",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2"
   }
 }

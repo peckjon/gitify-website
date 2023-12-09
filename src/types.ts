@@ -1,3 +1,20 @@
+export interface DownloadLink {
+  os: string;
+  name: string;
+  url: string;
+}
+
+export interface DownloadLinks {
+  primary: DownloadLink[];
+  alt: DownloadLink[];
+}
+
+export interface HeroData {
+  downloadLinks: DownloadLinks;
+  version: string;
+  releaseDate: string;
+}
+
 export interface LatestRelease {
   url: string;
   assets_url: string;
