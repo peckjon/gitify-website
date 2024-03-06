@@ -6,42 +6,42 @@ settings:
 
 dependencies:
   '@astrojs/tailwind':
-    specifier: ^5.0.3
+    specifier: 5.1.0
     version: 5.1.0(astro@4.4.13)(tailwindcss@3.4.1)
   '@tailwindcss/typography':
-    specifier: ^0.5.10
+    specifier: 0.5.10
     version: 0.5.10(tailwindcss@3.4.1)
   astro:
-    specifier: ^4.0.3
+    specifier: 4.4.13
     version: 4.4.13
   axios:
-    specifier: ^1.6.2
+    specifier: 1.6.7
     version: 1.6.7
   bowser:
-    specifier: ^2.11.0
+    specifier: 2.11.0
     version: 2.11.0
   date-fns:
-    specifier: ^3.0.0
+    specifier: 3.3.1
     version: 3.3.1
   marked:
-    specifier: ^12.0.0
+    specifier: 12.0.1
     version: 12.0.1
   sharp:
-    specifier: ^0.33.0
+    specifier: 0.33.2
     version: 0.33.2
   tailwindcss:
-    specifier: ^3.3.6
+    specifier: 3.4.1
     version: 3.4.1
 
 devDependencies:
   '@types/marked':
-    specifier: ^5.0.2
+    specifier: 5.0.2
     version: 5.0.2
   prettier:
-    specifier: ^3.1.0
+    specifier: 3.2.5
     version: 3.2.5
   prettier-plugin-astro:
-    specifier: ^0.13.0
+    specifier: 0.13.0
     version: 0.13.0
 
 packages:
@@ -769,15 +769,6 @@ packages:
       strip-ansi-cjs: /strip-ansi@6.0.1
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: /wrap-ansi@7.0.0
-    dev: false
-
-  /@jridgewell/gen-mapping@0.3.4:
-    resolution: {integrity: sha512-Oud2QPM5dHviZNn4y/WhhYKSXksv+1xLEIsNrAbGcFzUN3ubqWRFT5gwPchNc5NuzILOU4tPBDTZ4VwhL8Y7cw==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      '@jridgewell/set-array': 1.2.1
-      '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.25
     dev: false
 
   /@jridgewell/gen-mapping@0.3.5:
@@ -3673,7 +3664,7 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.4
+      '@jridgewell/gen-mapping': 0.3.5
       commander: 4.1.1
       glob: 10.3.10
       lines-and-columns: 1.2.4
