@@ -12,5 +12,13 @@
     "monthly"
   ],
   "separateMultipleMajor": true,
-  "osvVulnerabilityAlerts": true
+  "osvVulnerabilityAlerts": true,
+  "packageRules": [
+    {
+      "matchDepTypes": [
+        "engines"
+      ],
+      "rangeStrategy": "auto"
+    }
+  ]
 }
