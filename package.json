@@ -9,6 +9,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "prettier:check": "prettier --check 'src/**/*.{js,ts,astro}'",
+    "prettier:apply": "prettier --write 'src/**/*.{js,ts,astro}'",
+    "prepare": "husky",
     "astro": "astro"
   },
   "engines": {
@@ -32,8 +35,12 @@
   },
   "devDependencies": {
     "@types/marked": "5.0.2",
+    "husky": "9.0.11",
     "prettier": "3.2.5",
     "prettier-plugin-astro": "0.13.0"
   },
-  "packageManager": "pnpm@8.15.4"
+  "packageManager": "pnpm@8.15.4",
+  "lint-staged": {
+    "*.{md,js,ts,tsx}": "prettier --write"
+  }
 }
