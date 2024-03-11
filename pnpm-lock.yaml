@@ -21,8 +21,8 @@ dependencies:
     specifier: 2.11.0
     version: 2.11.0
   date-fns:
-    specifier: 3.3.1
-    version: 3.3.1
+    specifier: 3.4.0
+    version: 3.4.0
   marked:
     specifier: 12.0.1
     version: 12.0.1
@@ -1540,8 +1540,8 @@ packages:
     hasBin: true
     dev: false
 
-  /date-fns@3.3.1:
-    resolution: {integrity: sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==}
+  /date-fns@3.4.0:
+    resolution: {integrity: sha512-Akz4R8J9MXBsOgF1QeWeCsbv6pntT5KCPjU0Q9prBxVmWJYPLhwAIsNg3b0QAdr0ttiozYLD3L/af7Ra0jqYXw==}
     dev: false
 
   /debug@4.3.4:
