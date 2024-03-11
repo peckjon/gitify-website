@@ -25,7 +25,7 @@
   "dependencies": {
     "@astrojs/tailwind": "5.1.0",
     "@tailwindcss/typography": "0.5.10",
-    "astro": "4.4.13",
+    "astro": "4.5.0",
     "axios": "1.6.7",
     "bowser": "2.11.0",
     "date-fns": "3.4.0",
