@@ -6,6 +6,11 @@ import { Image } from 'astro:assets';
 
 const openSourceLibs = [
   {
+    name: 'Electron',
+    link: 'https://www.electronjs.org/',
+    image: import(`../assets/logos/electron.png`),
+  },
+  {
     name: 'React JS',
     link: 'https://reactjs.org/',
     image: import(`../assets/logos/react.png`),
@@ -65,7 +70,7 @@ const openSourceLibs = [
       <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
         {
           openSourceLibs.map((item) => (
-            <div class="hover:bg-gray-200 px-2 py-2 m-4">
+            <div class="hover:bg-gray-200 px-2 py-2 m-2">
               <a href={item.link} target="_blank" rel="noopener noreferrer">
                 <Image
                   width="50"
