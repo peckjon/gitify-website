@@ -29,8 +29,23 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
     },
     {
       os: 'Linux',
-      name: 'Linux',
+      name: 'Linux (AppImage)',
       url: getAssetLink(/Gitify-\d.\d.\d.AppImage/g),
+    },
+    {
+      os: 'Linux',
+      name: 'Linux (deb)',
+      url: getAssetLink(/Gitify-\d.\d.\d.deb/g),
+    },
+    {
+      os: 'Linux',
+      name: 'Linux (rpm)',
+      url: getAssetLink(/Gitify-\d.\d.\d.rpm/g),
+    },
+    {
+      os: 'Linux',
+      name: 'Linux (snap)',
+      url: getAssetLink(/Gitify-\d.\d.\d.snap/g),
     },
   ];
 
@@ -84,7 +99,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
   {
     version ? (
       <>
-        <div class="flex">
+        <div class="sm:flex md:grid md:grid-cols-2">
           {downloadLinks.primary.map((item, index) => (
             <a
               href={item.url}
@@ -94,7 +109,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
             </a>
           ))}
         </div>
-        <div>
+        <div class="w-80">
           <p>Current Version: {version}.</p>
           <p>Released on {releaseDate}.</p>
           {downloadLinks.alt.length > 0 && (
