@@ -1,4 +1,6 @@
-# gitify.io
+# gitify.io [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] 
+
+> The source code for our gitify.io website
 
 > Made with Astro.
 
@@ -39,6 +41,10 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check`   |
 | `pnpm astro --help` | Get help using the Astro CLI                       |
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[github]: https://github.com/gitify-app/website
+[contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website
+[license]: LICENSE
+[license-badge]: https://img.shields.io/github/license/gitify-app/gitify
+[renovate]: https://renovatebot.com/
+[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg
