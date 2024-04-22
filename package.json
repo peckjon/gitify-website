@@ -9,10 +9,10 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prettier:check": "prettier --check 'src/**/*.{js,ts,astro}'",
-    "prettier:apply": "prettier --write 'src/**/*.{js,ts,astro}'",
     "prepare": "husky",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:check": "biome check *",
+    "lint": "biome check --apply *"
   },
   "engines": {
     "node": ">=20"
@@ -34,12 +34,11 @@
     "tailwindcss": "3.4.3"
   },
   "devDependencies": {
-    "husky": "9.0.11",
-    "prettier": "3.2.5",
-    "prettier-plugin-astro": "0.13.0"
+    "@biomejs/biome": "1.7.0",
+    "husky": "9.0.11"
   },
   "packageManager": "pnpm@9.0.5",
   "lint-staged": {
-    "*.{md,js,ts,tsx}": "prettier --write"
+    "*.{md,js,ts,cjs,mjs,astro}": "biome format --write"
   }
 }

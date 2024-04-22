@@ -1,40 +1,40 @@
 ---
+import { Image } from 'astro:assets';
+import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionRow from '../layouts/SectionRow.astro';
-import Hero from '../components/Hero.astro';
-import { Image } from 'astro:assets';
 
 const openSourceLibs = [
   {
     name: 'Electron',
     link: 'https://www.electronjs.org/',
-    image: import(`../assets/logos/electron.png`),
+    image: import('../assets/logos/electron.png'),
   },
   {
     name: 'React JS',
     link: 'https://reactjs.org/',
-    image: import(`../assets/logos/react.png`),
+    image: import('../assets/logos/react.png'),
   },
 
   {
     name: 'Typescript',
     link: 'https://www.typescriptlang.org/',
-    image: import(`../assets/logos/typescript.png`),
+    image: import('../assets/logos/typescript.png'),
   },
   {
     name: 'Tailwind CSS',
     link: 'https://tailwindcss.com/',
-    image: import(`../assets/logos/tailwindcss.png`),
+    image: import('../assets/logos/tailwindcss.png'),
   },
   {
     name: 'GitHub',
     link: 'https://www.github.com/',
-    image: import(`../assets/logos/github.png`),
+    image: import('../assets/logos/github.png'),
   },
   {
     name: 'Jest',
     link: 'https://jestjs.io/',
-    image: import(`../assets/logos/jest.png`),
+    image: import('../assets/logos/jest.png'),
   },
 ];
 ---
