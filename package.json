@@ -1,6 +1,6 @@
 {
   "name": "gitify-website",
-  "version": "5.4.0",
+  "version": "5.5.0",
   "description": "The source code of gitify.io",
   "author": "Emmanouil Konstantinidis <hello@manos.im>",
   "type": "module",
