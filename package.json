@@ -11,8 +11,8 @@
     "preview": "astro preview",
     "prepare": "husky",
     "astro": "astro",
-    "lint:check": "biome check *",
-    "lint": "biome check --apply *"
+    "lint:check": "biome check",
+    "lint": "biome check --fix"
   },
   "engines": {
     "node": ">=20"
