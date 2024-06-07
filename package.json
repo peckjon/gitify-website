@@ -1,8 +1,7 @@
 {
   "name": "gitify-website",
-  "version": "5.5.0",
+  "version": "5.7.0",
   "description": "The source code of gitify.io",
-  "author": "Emmanouil Konstantinidis <hello@manos.im>",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -17,11 +16,37 @@
   "engines": {
     "node": ">=20"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/gitify-app/website"
   },
+  "keywords": [
+    "gitify",
+    "github",
+    "notifier",
+    "notifications",
+    "website",
+    "astro"
+  ],
+  "author": {
+    "name": "Emmanouil Konstantinidis",
+    "email": "hello@manos.im"
+  },
+  "contributors": [
+    {
+      "name": "Emmanouil Konstantinidis",
+      "url": "https://github.com/manosim"
+    },
+    {
+      "name": "Adam Setch",
+      "url": "https://github.com/setchy"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gitify-app/website/issues"
+  },
+  "homepage": "https://www.gitify.io/",
   "dependencies": {
     "@astrojs/tailwind": "5.1.0",
     "@tailwindcss/typography": "0.5.13",
