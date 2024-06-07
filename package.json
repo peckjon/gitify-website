@@ -1,6 +1,6 @@
 {
   "name": "gitify-website",
-  "version": "5.7.0",
+  "version": "latest",
   "description": "The source code of gitify.io",
   "type": "module",
   "scripts": {
