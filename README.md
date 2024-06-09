@@ -1,4 +1,4 @@
-# gitify.io [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] 
+# gitify.io [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] 
 
 > The source code for our gitify.io website
 
@@ -44,6 +44,8 @@ All commands are run from the root of the project, from a terminal:
 
 [github]: https://github.com/gitify-app/website
 [contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website
+[librariesio]: https://libraries.io/
+[librariesio-badge]: https://img.shields.io/librariesio/github/gitify-app/website
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/gitify-app/gitify
 [renovate]: https://renovatebot.com/
