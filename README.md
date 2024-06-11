@@ -1,4 +1,4 @@
-# gitify.io [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] 
+# gitify.io [![Renovate enabled][renovate-badge]][renovate] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] 
 
 > The source code for our gitify.io website
 
