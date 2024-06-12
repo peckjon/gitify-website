@@ -50,7 +50,7 @@
   "dependencies": {
     "@astrojs/tailwind": "5.1.0",
     "@tailwindcss/typography": "0.5.13",
-    "astro": "4.10.1",
+    "astro": "4.10.2",
     "bowser": "2.11.0",
     "date-fns": "3.6.0",
     "marked": "12.0.2",
