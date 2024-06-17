@@ -2,6 +2,7 @@
 import Footer from '../components/Footer.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import Navbar from '../components/Navbar.astro';
+import '../app.css';
 
 import { SITE_URL, siteMetadata } from '../constants';
 
@@ -56,7 +57,7 @@ const ogImage = `${SITE_URL}/images/social.png`;
       content="jJNnPZ2wu7F1tlSab57og1N3RNrMqhzTCzRrbztY8WU"
     />
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <Navbar currentPathname={Astro.url.pathname} />
     <slot />
     {!hideFooter && <Footer currentPathname={Astro.url.pathname} />}
