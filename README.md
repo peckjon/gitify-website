@@ -43,8 +43,8 @@ All commands are run from the root of the project, from a terminal:
 
 
 [github]: https://github.com/gitify-app/website
-[contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website
+[contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website?logo=github
 [license]: LICENSE
-[license-badge]: https://img.shields.io/github/license/gitify-app/gitify
+[license-badge]: https://img.shields.io/github/license/gitify-app/gitify?logo=github
 [renovate]: https://renovatebot.com/
-[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg
+[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovatebot
