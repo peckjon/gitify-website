@@ -47,4 +47,4 @@ All commands are run from the root of the project, from a terminal:
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/gitify-app/gitify?logo=github
 [renovate]: https://renovatebot.com/
-[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovatebot
+[renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate
