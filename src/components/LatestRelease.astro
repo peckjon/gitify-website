@@ -20,32 +20,32 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
     {
       os: 'macOS',
       name: 'macOS (Universal)',
-      url: getAssetLink(/Gitify-\d.\d.\d-universal.dmg/g),
+      url: getAssetLink(/Gitify-\d+.\d+.\d+-universal.dmg/g),
     },
     {
       os: 'Windows',
       name: 'Windows',
-      url: getAssetLink(/Gitify-Setup-\d.\d.\d.exe/g),
+      url: getAssetLink(/Gitify-Setup-\d+.\d+.\d+.exe/g),
     },
     {
       os: 'Linux',
       name: 'Linux (AppImage)',
-      url: getAssetLink(/Gitify-\d.\d.\d.AppImage/g),
+      url: getAssetLink(/Gitify-\d+.\d+.\d+.AppImage/g),
     },
     {
       os: 'Linux',
       name: 'Linux (deb)',
-      url: getAssetLink(/Gitify-\d.\d.\d.deb/g),
+      url: getAssetLink(/Gitify-\d+.\d+.\d+.deb/g),
     },
     {
       os: 'Linux',
       name: 'Linux (rpm)',
-      url: getAssetLink(/Gitify-\d.\d.\d.rpm/g),
+      url: getAssetLink(/Gitify-\d+.\d+.\d+.rpm/g),
     },
     {
       os: 'Linux',
       name: 'Linux (snap)',
-      url: getAssetLink(/Gitify-\d.\d.\d.snap/g),
+      url: getAssetLink(/Gitify-\d+.\d+.\d+.snap/g),
     },
   ];
 
