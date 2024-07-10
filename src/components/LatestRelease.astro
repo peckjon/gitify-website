@@ -4,7 +4,7 @@ import { format, parseISO } from 'date-fns';
 import DownloadIcon from '../icons/Download.astro';
 import type { Assets, DownloadLink, DownloadLinks, HeroData } from '../types';
 
-const REPO_URL =
+const REPO_API_URL =
   'https://api.github.com/repos/gitify-app/gitify/releases/latest';
 const REPO_RELEASES_URL =
   'https://github.com/gitify-app/gitify/releases/latest';
@@ -13,7 +13,7 @@ const releaseDetailsClassName = 'text-sm mt-4';
 const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
   const getAssetLink = (filenameRegex: RegExp): string => {
     const asset = assets.find((item) => item.name.match(filenameRegex));
-    return asset ? asset.browser_download_url : REPO_URL;
+    return asset ? asset.browser_download_url : REPO_RELEASES_URL;
   };
 
   const supportedOSs: DownloadLink[] = [
@@ -70,7 +70,7 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
 
 const loadInitialData = async (): Promise<HeroData> => {
   try {
-    const response = await fetch(REPO_URL);
+    const response = await fetch(REPO_API_URL);
     const data = await response.json();
     const parsedDate = parseISO(data.published_at.slice(0, -1));
     const downloadLinks = getDownloadLinks(data.assets);
