@@ -15,8 +15,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0(astro@4.12.2)(tailwindcss@3.4.6)
       '@kobalte/core':
-        specifier: 0.13.3
-        version: 0.13.3(solid-js@1.8.18)
+        specifier: 0.13.4
+        version: 0.13.4(solid-js@1.8.18)
       '@tailwindcss/typography':
         specifier: 0.5.13
         version: 0.5.13(tailwindcss@3.4.6)
@@ -614,8 +614,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@kobalte/core@0.13.3':
-    resolution: {integrity: sha512-7ansvAwiIz2EYuifI8jmGj+ZNG/3R4hdkXZkCEFVKsQzq3vZpuSiAXgrdZeQOR4Zby7gxLOzpakjfv7D/3PPGw==}
+  '@kobalte/core@0.13.4':
+    resolution: {integrity: sha512-ElvazoxoQU/z5pQUdHtXAzjiZA60J+Fo36WgO+j8sMvycIGwrlv+Fdr+uXcLSm1onYOYoSG1+vumD3Ce5OYzzw==}
     peerDependencies:
       solid-js: ^1.8.15
 
@@ -2978,12 +2978,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@kobalte/core@0.13.3(solid-js@1.8.18)':
+  '@kobalte/core@0.13.4(solid-js@1.8.18)':
     dependencies:
       '@floating-ui/dom': 1.6.5
       '@internationalized/date': 3.5.4
       '@internationalized/number': 3.5.3
       '@kobalte/utils': 0.9.0(solid-js@1.8.18)
+      '@solid-primitives/props': 3.1.11(solid-js@1.8.18)
       solid-js: 1.8.18
       solid-presence: 0.1.6(solid-js@1.8.18)
       solid-prevent-scroll: 0.1.7(solid-js@1.8.18)
