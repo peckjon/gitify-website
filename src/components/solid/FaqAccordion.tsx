@@ -29,7 +29,7 @@ const content = [
     id: '4',
     question: 'Something looks wrong - How can I debug?',
     answer:
-      'You can debug Gitify by pressing:\n- macOS: `command + alt + i`\n- Windows + Linux: `ctrl + shift + i`\n\nThis will open the dev tools and then you can see any logs, network requests etc.',
+      'You can debug Gitify by pressing:\n- macOS: `command + opt + i`\n- Windows + Linux: `ctrl + shift + i`\n\nThis will open the dev tools and then you can see any logs, network requests etc.',
   },
   {
     id: '5',
