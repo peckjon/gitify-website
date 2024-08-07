@@ -57,7 +57,7 @@
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
     "date-fns": "3.6.0",
-    "marked": "13.0.3",
+    "marked": "14.0.0",
     "sharp": "0.33.4",
     "solid-js": "1.8.19",
     "solid-markdown": "2.0.13",
