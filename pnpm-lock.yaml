@@ -18,8 +18,8 @@ importers:
         specifier: 0.13.4
         version: 0.13.4(solid-js@1.8.19)
       '@tailwindcss/typography':
-        specifier: 0.5.13
-        version: 0.5.13(tailwindcss@3.4.7)
+        specifier: 0.5.14
+        version: 0.5.14(tailwindcss@3.4.7)
       astro:
         specifier: 4.13.3
         version: 4.13.3
@@ -713,8 +713,8 @@ packages:
   '@swc/helpers@0.5.11':
     resolution: {integrity: sha512-YNlnKRWF2sVojTpIyzwou9XoTNbzbzONwRhOoniEioF1AtaitTvVZblaQRrAzChWQ1bLYyYSWzM18y4WwgzJ+A==}
 
-  '@tailwindcss/typography@0.5.13':
-    resolution: {integrity: sha512-ADGcJ8dX21dVVHIwTRgzrcunY6YY9uSlAHHGVKvkA+vLc5qLwEszvKts40lx7z0qc4clpjclwLeK5rVCV2P/uw==}
+  '@tailwindcss/typography@0.5.14':
+    resolution: {integrity: sha512-ZvOCjUbsJBjL9CxQBn+VEnFpouzuKhxh2dH8xMIWHILL+HfOYtlAkWcyoon8LlzE53d2Yo6YO6pahKKNW3q1YQ==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
@@ -2956,7 +2956,7 @@ snapshots:
     dependencies:
       tslib: 2.6.2
 
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.7)':
+  '@tailwindcss/typography@0.5.14(tailwindcss@3.4.7)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6

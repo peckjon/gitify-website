@@ -51,7 +51,7 @@
     "@astrojs/solid-js": "4.4.1",
     "@astrojs/tailwind": "5.1.0",
     "@kobalte/core": "0.13.4",
-    "@tailwindcss/typography": "0.5.13",
+    "@tailwindcss/typography": "0.5.14",
     "astro": "4.13.3",
     "bowser": "2.11.0",
     "class-variance-authority": "0.7.0",
