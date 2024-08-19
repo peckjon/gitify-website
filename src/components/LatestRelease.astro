@@ -35,17 +35,17 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
     {
       os: 'Linux',
       name: 'Linux (deb)',
-      url: getAssetLink(/Gitify-\d+.\d+.\d+.deb/g),
+      url: getAssetLink(/gitify_\d+.\d+.\d+_amd64.deb/g),
     },
     {
       os: 'Linux',
       name: 'Linux (rpm)',
-      url: getAssetLink(/Gitify-\d+.\d+.\d+.rpm/g),
+      url: getAssetLink(/gitify-\d+.\d+.\d+.x86_64.rpm/g),
     },
     {
       os: 'Linux',
       name: 'Linux (snap)',
-      url: getAssetLink(/Gitify-\d+.\d+.\d+.snap/g),
+      url: getAssetLink(/gitify_\d+.\d+.\d+_amd64.snap/g),
     },
   ];
 
