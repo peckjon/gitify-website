@@ -58,7 +58,7 @@
     "clsx": "2.1.1",
     "date-fns": "3.6.0",
     "marked": "14.0.0",
-    "sharp": "0.33.4",
+    "sharp": "0.33.5",
     "solid-js": "1.8.21",
     "solid-markdown": "2.0.13",
     "tailwind-merge": "2.5.2",
