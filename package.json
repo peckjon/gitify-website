@@ -50,7 +50,7 @@
   "dependencies": {
     "@astrojs/solid-js": "4.4.1",
     "@astrojs/tailwind": "5.1.0",
-    "@kobalte/core": "0.13.4",
+    "@kobalte/core": "0.13.6",
     "@tailwindcss/typography": "0.5.15",
     "astro": "4.15.1",
     "bowser": "2.11.0",
