@@ -43,7 +43,7 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check`   |
 | `pnpm astro --help` | Get help using the Astro CLI                       |
 
-
+<!-- LINK LABELS -->
 [github]: https://github.com/gitify-app/website
 [contributors-badge]: https://img.shields.io/github/contributors/gitify-app/website?logo=github
 [license]: LICENSE
