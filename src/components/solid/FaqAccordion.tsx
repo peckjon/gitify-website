@@ -5,13 +5,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '~/components/ui/Accordion';
+import { siteMetadata } from '~/constants';
 
 const content = [
   {
     id: '1',
     question: "My notifications aren't showing?",
     answer:
-      "Some organisations require applications to request access before allowing access to any data (including notifications) about their repositories.\n\nTo check if Gitify is approved by your organisation you can go to [settings](https://github.com/settings/applications), then click on **Gitify** and scroll to **Organization access**.\n\nAlternatively, if you generated a **PAT**, you can check if it has the correct permissions by going to [settings](https://github.com/settings/tokens) and checking if the token's SSO has been Authorized.",
+      "Some organizations require applications to request access before allowing access to any data (including notifications) about their repositories.\n\nTo check if Gitify is approved by your organisation you can go to [settings](https://github.com/settings/applications), then click on **Gitify** and scroll to **Organization access**.\n\nAlternatively, if you generated a **PAT**, you can check if it has the correct permissions by going to [settings](https://github.com/settings/tokens) and checking if the token's SSO has been Authorized.",
   },
   {
     id: '2',
@@ -34,8 +35,7 @@ const content = [
   {
     id: '5',
     question: 'How can I contribute to Gitify?',
-    answer:
-      "You can contribute to Gitify by opening a pull request @[gitify-app/gitify](https://github.com/gitify-app/gitify)! Check out our open issues and see if there's anything you'd like to work on.",
+    answer: `You can contribute to Gitify by opening a pull request @[${siteMetadata.repo}](https://github.com/${siteMetadata.repo})! Check out our open issues and see if there's anything you'd like to work on.`,
   },
 ];
 
