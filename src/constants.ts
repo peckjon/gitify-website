@@ -4,7 +4,7 @@ export const siteMetadata = {
   title: 'Gitify',
   description: 'Your GitHub notifications on your menu bar.',
   keywords:
-    'gitify,mobile,desktop,application,github,notifications,unread,menu bar,electron,open source,ekonstantinidis,manosim,mac,osx',
+    'gitify,desktop,application,github,notifications,unread,menu bar,electron,open source,ekonstantinidis,manosim,mac,osx,linux',
   author: '@manosim_',
   menuLinks: [
     {
