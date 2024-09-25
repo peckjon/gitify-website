@@ -34,6 +34,12 @@ const content = [
   },
   {
     id: '5',
+    question: 'Are there local log files?',
+    answer:
+      'There sure is! You can find them on your device at:\n- macOS: `~/Library/Logs/gitify`\n- Windows: `%USERPROFILE%\\AppData\\Roaming\\gitify`.',
+  },
+  {
+    id: '6',
     question: 'How can I contribute to Gitify?',
     answer: `You can contribute to Gitify by opening a pull request @[${siteMetadata.repo}](https://github.com/${siteMetadata.repo})! Check out our open issues and see if there's anything you'd like to work on.`,
   },
