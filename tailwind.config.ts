@@ -1,5 +1,9 @@
-/**@type {import("tailwindcss").Config} */
-module.exports = {
+import type { Config } from 'tailwindcss';
+
+import TailwindCSSTypography from '@tailwindcss/typography';
+import TailwindCSSAnimate from 'tailwindcss-animate';
+
+const config: Config = {
   darkMode: ['class', '[data-kb-theme="dark"]'],
   content: ['./src/**/*.{astro,ts,tsx}'],
   theme: {
@@ -11,20 +15,20 @@ module.exports = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: 0 },
+          from: { height: '0' },
           to: { height: 'var(--kb-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--kb-accordion-content-height)' },
-          to: { height: 0 },
+          to: { height: '0' },
         },
         'content-show': {
-          from: { opacity: 0, transform: 'scale(0.96)' },
-          to: { opacity: 1, transform: 'scale(1)' },
+          from: { opacity: '0', transform: 'scale(0.96)' },
+          to: { opacity: '1', transform: 'scale(1)' },
         },
         'content-hide': {
-          from: { opacity: 1, transform: 'scale(1)' },
-          to: { opacity: 0, transform: 'scale(0.96)' },
+          from: { opacity: '1', transform: 'scale(1)' },
+          to: { opacity: '0', transform: 'scale(0.96)' },
         },
       },
       animation: {
@@ -35,5 +39,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+  plugins: [TailwindCSSAnimate, TailwindCSSTypography],
 };
+
+export default config;
