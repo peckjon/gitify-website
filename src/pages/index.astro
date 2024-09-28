@@ -7,33 +7,33 @@ import SectionRow from '../layouts/SectionRow.astro';
 const openSourceLibs = [
   {
     name: 'Electron',
-    link: 'https://www.electronjs.org/',
-    image: import('../assets/logos/electron.png'),
+    link: 'https://electronjs.org/',
+    image: import('../assets/logos/electron.svg'),
   },
   {
-    name: 'React JS',
-    link: 'https://reactjs.org/',
-    image: import('../assets/logos/react.png'),
+    name: 'React',
+    link: 'https://react.dev/',
+    image: import('../assets/logos/react.svg'),
   },
   {
     name: 'Tailwind CSS',
     link: 'https://tailwindcss.com/',
-    image: import('../assets/logos/tailwindcss.png'),
+    image: import('../assets/logos/tailwindcss.svg'),
   },
   {
     name: 'Jest',
     link: 'https://jestjs.io/',
-    image: import('../assets/logos/jest.png'),
+    image: import('../assets/logos/jest.svg'),
   },
   {
     name: 'Typescript',
-    link: 'https://www.typescriptlang.org/',
-    image: import('../assets/logos/typescript.png'),
+    link: 'https://typescriptlang.org/',
+    image: import('../assets/logos/typescript.svg'),
   },
   {
     name: 'GitHub',
     link: 'https://www.github.com/',
-    image: import('../assets/logos/github.png'),
+    image: import('../assets/logos/github.svg'),
   },
 ];
 ---
@@ -44,7 +44,7 @@ const openSourceLibs = [
 
     <SectionRow
       title="All your GitHub notifications on your desktop. Nice & Easy."
-      description="Ever got lost with GitHub notifications? Too many emails? Gitify is all about making your life easier. Sitting on your menu bar, it informs you for any GitHub notifications without being annoying and of course without adverts. It just gets the job done. Works with GitHub Cloud and GitHub Enterprise Server. You can even connect **multiple** accounts."
+      description="<p>Ever got lost with GitHub notifications? Too many emails?</p><br /><p>Gitify is all about making your life easier. Sitting on your menu bar, it informs you for any GitHub notifications without being annoying and of course without adverts. It just gets the job done.</p><br /><p>Works with GitHub Cloud and GitHub Enterprise Server. You can even connect **multiple** accounts.</p>"
       screenshot={{
         path: 'all-read',
         alt: 'Screenshot when there are no notifications read',
@@ -53,7 +53,7 @@ const openSourceLibs = [
 
     <SectionRow
       title="It's about your preferences."
-      description="Gitify will notify you every time you receive a notification by playing a sound (not an annoying one - it's a promise), showing native mac OS notifications or by just turning its tray icon to green. It is not there to interupt your workflow or distract you, you can customize your settings to your preference."
+      description="<p>Gitify will notify you every time you receive a notification by playing a sound (not an annoying one - it's a promise), showing native mac OS notifications or by just turning its tray icon to green.</p><br /><p>It is not there to interupt your workflow or distract you, you can customize your settings to your preference.</p>"
       screenshot={{
         path: 'settings',
         alt: 'Your Preferences, Settings',

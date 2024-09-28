@@ -1,6 +1,6 @@
 ---
 import { siteMetadata } from '~/constants';
-import GithubIcon from '../icons/Github.astro';
+import GitHubIcon from '../icons/Github.astro';
 import Logo from './Logo.astro';
 
 const { currentPathname } = Astro.props;
@@ -44,7 +44,7 @@ const isHomepage = currentPathname === '/';
               href=`https://github.com/${siteMetadata.repo}`
               aria-label="GitHub Repository"
             >
-              <GithubIcon className="w-4 h-4" />
+              <GitHubIcon className="w-6" />
             </a>
           </li>
         </ul>
