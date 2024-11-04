@@ -14,7 +14,7 @@ export const siteMetadata = {
     },
     {
       name: 'FAQ',
-      path: '/faq',
+      path: '/faq/',
     },
   ],
 };
