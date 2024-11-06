@@ -30,7 +30,7 @@ const content = [
     id: '4',
     question: 'Something is not working as expected, how can I debug Gitify?',
     answer:
-      'Using **Chrome Developer Tools** (console logs, network requests, etc):\n- All platforms: right click tray icon then _Developer → Toggle Developer Tools_\n- macOS: `command + opt + i`\n- Windows + Linux: `ctrl + shift + i`\n\nUsing **Application Log Files**:\n- macOS: `~/Library/Logs/gitify`\n- Windows: `%USERPROFILE%\\AppData\\Roaming\\gitify`',
+      'Using **Chrome Developer Tools** (console logs, network requests, etc):\n- All platforms: right click tray icon then _Developer → Toggle Developer Tools_\n- macOS: `command + opt + i`\n- Windows: `ctrl + shift + i`\n- Linux: `ctrl + shift + i`\n\nUsing **Application Log Files**:\n- macOS: `~/Library/Logs/gitify`\n- Windows: `%USERPROFILE%\\AppData\\Roaming\\gitify\\logs`\n- Linux: `~/.config/gitify/logs`',
   },
   {
     id: '5',
