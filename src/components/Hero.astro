@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Logo from './Logo.astro';
 
+import { siteMetadata } from '~/constants';
 import notifications from '../assets/notifications.png';
 import LatestRelease from './LatestRelease.astro';
 ---
@@ -13,11 +14,9 @@ import LatestRelease from './LatestRelease.astro';
     <div class="flex flex-col justify-center flex-grow">
       <Logo className="w-16 lg:w-24 mb-4" isDark />
 
-      <h1 class="text-2xl lg:text-4xl font-semibold">Gitify</h1>
+      <h1 class="text-2xl lg:text-4xl font-semibold">{siteMetadata.title}</h1>
 
-      <h2 class="mt-2 text-xl lg:text-2xl font-light">
-        Your GitHub notifications <br /> on your menu bar.
-      </h2>
+      <h2 class="mt-2 text-xl lg:text-2xl font-light">{siteMetadata.description}.</h2>
 
       <LatestRelease />
     </div>

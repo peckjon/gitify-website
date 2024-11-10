@@ -1,41 +1,10 @@
 ---
-import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+import { openSourceLibs } from '~/icons/icons';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionRow from '../layouts/SectionRow.astro';
-
-const openSourceLibs = [
-  {
-    name: 'Electron',
-    link: 'https://electronjs.org/',
-    image: import('../assets/logos/electron.svg'),
-  },
-  {
-    name: 'React',
-    link: 'https://react.dev/',
-    image: import('../assets/logos/react.svg'),
-  },
-  {
-    name: 'Tailwind CSS',
-    link: 'https://tailwindcss.com/',
-    image: import('../assets/logos/tailwindcss.svg'),
-  },
-  {
-    name: 'Jest',
-    link: 'https://jestjs.io/',
-    image: import('../assets/logos/jest.svg'),
-  },
-  {
-    name: 'Typescript',
-    link: 'https://typescriptlang.org/',
-    image: import('../assets/logos/typescript.svg'),
-  },
-  {
-    name: 'GitHub',
-    link: 'https://www.github.com/',
-    image: import('../assets/logos/github.svg'),
-  },
-];
 ---
 
 <Layout title="GitHub notifications on your menu bar">
@@ -69,15 +38,9 @@ const openSourceLibs = [
       <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
         {
           openSourceLibs.map((item) => (
-            <div class="hover:bg-gray-200 px-2 py-2 m-2">
+            <div class="hover:bg-gray-200 p-2 m-2 rounded-lg">
               <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <Image
-                  width="50"
-                  height="50"
-                  class="w-8 sm:w-12"
-                  src={item.image}
-                  alt={item.name}
-                />
+                <Icon name={item.svg} title={item.name} size={32} class="w-8 sm:w-12" />
               </a>
             </div>
           ))

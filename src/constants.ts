@@ -1,12 +1,18 @@
-export const SITE_URL = import.meta.env.SITE_URL || 'http://localhost:3000';
-
 export const siteMetadata = {
   title: 'Gitify',
-  description: 'Your GitHub notifications on your menu bar.',
-  repo: 'gitify-app/gitify',
+  url: 'https://gitify.io',
+  description: 'GitHub notifications on your menu bar',
+  repo: {
+    fullName: 'gitify-app/gitify',
+    owner: 'gitify-app',
+    name: 'gitify',
+  },
   keywords:
-    'gitify,desktop,application,github,notifications,unread,menu bar,electron,open source,ekonstantinidis,manosim,mac,osx,linux',
-  author: '@manosim_',
+    'gitify,desktop,application,github,notifications,unread,menu bar,electron,open source,mac,windows,linux',
+  google: {
+    analytics: 'G-QXML81DEDV',
+    siteVerification: 'jJNnPZ2wu7F1tlSab57og1N3RNrMqhzTCzRrbztY8WU',
+  },
   menuLinks: [
     {
       name: 'Home',
@@ -19,9 +25,10 @@ export const siteMetadata = {
   ],
 };
 
-export const manifest = {
-  name: 'Gitify',
-  short_name: 'starter',
-  themeColor: '#24292e',
-  display: 'minimal-ui',
+export const URLs = {
+  GITHUB: {
+    REPO: `https://github.com/${siteMetadata.repo.fullName}`,
+    ISSUES: `https://github.com/${siteMetadata.repo.fullName}/issues`,
+    LATEST_RELEASE: `https://github.com/${siteMetadata.repo.fullName}/releases/latest`,
+  },
 };

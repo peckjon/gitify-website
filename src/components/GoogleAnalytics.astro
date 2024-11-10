@@ -1,6 +1,9 @@
+---
+import { siteMetadata } from '~/constants';
+---
+
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXML81DEDV"
-></script>
+<script async src=`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.google.analytics}`></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -8,5 +11,5 @@
   }
   gtag('js', new Date());
 
-  gtag('config', 'G-QXML81DEDV');
+  gtag('config', siteMetadata.google.analytics);
 </script>
