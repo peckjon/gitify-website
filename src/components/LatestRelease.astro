@@ -124,7 +124,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           </div>
           <div>Released on: {releaseDate}</div>
           {downloadLinks.alt.length > 0 && (
-            <p>
+            <div>
               Also available on:
               <ul class="list-disc list-inside ml-4">
                 {downloadLinks.alt.map((platform) => (
@@ -135,7 +135,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
                   </li>
                 ))}
               </ul>
-            </p>
+            </div>
           )}
         </div>
       </>
