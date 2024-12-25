@@ -1,10 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
 
+import Hero from "~/components/Hero.astro";
 import { openSourceLibs } from "~/icons/icons";
-import Hero from "../components/Hero.astro";
-import Layout from "../layouts/Layout.astro";
-import SectionRow from "../layouts/SectionRow.astro";
+import Layout from "~/layouts/Layout.astro";
+import SectionRow from "~/layouts/SectionRow.astro";
 ---
 
 <Layout title="GitHub notifications on your menu bar">
@@ -15,8 +15,8 @@ import SectionRow from "../layouts/SectionRow.astro";
       title="All your GitHub notifications on your desktop. Nice & Easy."
       description="<p>Ever got lost with GitHub notifications? Too many emails?</p><br /><p>Gitify is all about making your life easier. Sitting on your menu bar, it informs you for any GitHub notifications without being annoying and of course without adverts. It just gets the job done.</p><br /><p>Works with GitHub Cloud and GitHub Enterprise Server. You can even connect multiple accounts.</p>"
       screenshot={{
-        path: 'all-read',
-        alt: 'Screenshot when there are no notifications read',
+        path: "all-read",
+        alt: "Screenshot when there are no notifications read",
       }}
     />
 
@@ -24,8 +24,8 @@ import SectionRow from "../layouts/SectionRow.astro";
       title="It's about your preferences."
       description="<p>Gitify will notify you every time you receive a notification by playing a sound (not an annoying one - it's a promise), showing native mac OS notifications or by just turning its tray icon to green.</p><br /><p>It is not there to interupt your workflow or distract you, you can customize your settings to your preference.</p>"
       screenshot={{
-        path: 'settings',
-        alt: 'Your Preferences, Settings',
+        path: "settings",
+        alt: "Your Preferences, Settings",
       }}
       isDark
       isReversed
@@ -40,7 +40,12 @@ import SectionRow from "../layouts/SectionRow.astro";
           openSourceLibs.map((item) => (
             <div class="hover:bg-gray-200 p-2 m-2 rounded-lg">
               <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <Icon name={item.svg} title={item.name} size={32} class="w-8 sm:w-12" />
+                <Icon
+                  name={item.svg}
+                  title={item.name}
+                  size={32}
+                  class="w-8 sm:w-12"
+                />
               </a>
             </div>
           ))

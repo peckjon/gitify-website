@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "./Logo.astro";
 
+import notifications from "~/assets/notifications.png";
+import LatestRelease from "~/components/LatestRelease.astro";
+import Logo from "~/components/Logo.astro";
 import { siteMetadata } from "~/constants";
-import notifications from "../assets/notifications.png";
-import LatestRelease from "./LatestRelease.astro";
 ---
 
 <div class="bg-gray-100">
@@ -16,7 +16,9 @@ import LatestRelease from "./LatestRelease.astro";
 
       <h1 class="text-2xl lg:text-4xl font-semibold">{siteMetadata.title}</h1>
 
-      <h2 class="mt-2 text-xl lg:text-2xl font-light">{siteMetadata.description}.</h2>
+      <h2 class="mt-2 text-xl lg:text-2xl font-light">
+        {siteMetadata.description}.
+      </h2>
 
       <LatestRelease />
     </div>
