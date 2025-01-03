@@ -7,6 +7,10 @@ export const siteMetadata = {
     owner: 'gitify-app',
     name: 'gitify',
   },
+  author: {
+    name: 'Gitify Team',
+    site: 'https://github.com/gitify-app',
+  },
   keywords:
     'gitify,desktop,application,github,notifications,unread,menu bar,electron,open source,mac,windows,linux',
   google: {
