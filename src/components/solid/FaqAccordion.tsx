@@ -35,7 +35,7 @@ const content = [
   {
     id: '5',
     question: 'How can I contribute to Gitify?',
-    answer: `You can contribute to Gitify by opening an issue or pull request on GitHub at [${siteMetadata.repo}](https://github.com/${siteMetadata.repo}).\n\nCheck out our [open issues](https://github.com/${siteMetadata.repo}/issues) and see if there is any existing ideas that you would like to work on.`,
+    answer: `You can contribute to Gitify by opening an issue or pull request on GitHub at [${siteMetadata.repo.fullName}](https://github.com/${siteMetadata.repo.fullName}).\n\nCheck out our [open issues](https://github.com/${siteMetadata.repo.fullName}/issues) and see if there is any existing ideas that you would like to work on.`,
   },
 ];
 
