@@ -9,7 +9,7 @@ const isHomepage = currentPathname === "/";
 
 <div
   class:list={[
-    "bg-gray-800 text-white text-sm py-10 px-3",
+    "bg-gitify-footer text-white text-sm py-10 px-3",
     isHomepage ? "mt-0" : "mt-12",
   ]}
 >
@@ -19,13 +19,15 @@ const isHomepage = currentPathname === "/";
       rel="noopener noreferrer"
       href=`${URLs.GITHUB.REPO}`
       aria-label="GitHub Repository"
-      class="mt-1 mb-4 mx-2 p-1 text-white hover:text-gray-400"
+      class="mt-1 mb-4 mx-2 p-1"
     >
       <Icon name="mdi:github" size={32} />
     </a>
 
     <div class="my-3">
-      Copyright © <a href="/">Gitify Team</a>
+      Copyright © <a href={siteMetadata.author.site}
+        >{siteMetadata.author.name}</a
+      >
       {new Date().getFullYear()}
     </div>
   </div>

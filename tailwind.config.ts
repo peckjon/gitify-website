@@ -1,7 +1,7 @@
-import type { Config } from 'tailwindcss';
-
 import TailwindCSSTypography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
 import TailwindCSSAnimate from 'tailwindcss-animate';
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   darkMode: ['class', '[data-kb-theme="dark"]'],
@@ -9,7 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navbar: '#24292e',
+        gitify: {
+          navbar: '#24292e',
+          footer: colors.gray[800],
+          section: {
+            light: colors.gray[50],
+            dark: colors.gray[800],
+          },
+          hero: colors.gray[100],
+          icon: {
+            hover: colors.gray[200],
+          },
+          repo: {
+            hover: colors.blue[300],
+          },
+          link: colors.white,
+          download: {
+            link: colors.black,
+            rest: colors.green[700],
+            hover: colors.green[800],
+          },
+          button: {
+            rest: colors.blue[600],
+            hover: colors.blue[700],
+          },
+        },
       },
       keyframes: {
         'accordion-down': {

@@ -7,10 +7,10 @@ const { currentPathname } = Astro.props;
 const isHomepage = currentPathname === "/";
 ---
 
-<nav class:list={["py-8 px-8", isHomepage && "bg-gray-100"]}>
+<nav class:list={["py-8 px-8", isHomepage && "bg-gitify-hero"]}>
   <div class="container max-w-5xl lg:mx-auto">
     <div
-      class="bg-navbar rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
+      class="bg-gitify-navbar rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
     >
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a href="/" aria-label={siteMetadata.title}>
@@ -27,9 +27,9 @@ const isHomepage = currentPathname === "/";
                   href={item.path}
                   class:list={[
                     "py-1.5 lg:py-2 px-2 lg:px-3",
-                    "text-white font-light hover:text-gray-300",
+                    "font-light",
                     currentPathname === item.path
-                      ? "border rounded-lg border-white text-white"
+                      ? "border rounded-lg border-white"
                       : "",
                   ]}
                 >
