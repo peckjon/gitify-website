@@ -21,7 +21,7 @@ const config: Config = {
             hover: colors.gray[200],
           },
           repo: {
-            hover: colors.blue[300],
+            hover: colors.gray[300],
           },
           link: colors.white,
           download: {
