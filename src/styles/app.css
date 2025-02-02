@@ -1,23 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
-a {
-  @apply text-gitify-link font-semibold hover:underline;
+a:not(.gitify-navbar) {
+  @apply font-semibold;
 }
 
-.markdown ul {
-  @apply list-disc m-4;
+a:not(.gitify-repo) {
+  @apply hover:underline;
 }
 
-.markdown ul > li {
-  @apply m-2;
+.faq ul {
+  @apply list-disc ml-4;
 }
 
-.markdown p + ul {
-  padding-top: 0; /* Remove padding if <p> is followed by <ul> */
+.faq ul > li {
+  @apply ml-2;
 }
 
-.markdown p:not(:last-child):not(:has(+ ul)) {
-  padding-bottom: 1rem;
+.accordion__title {
+  h3 {
+    @apply text-base font-medium;
+  }
+}
+
+.accordion__content {
+  @apply text-base;
 }

@@ -17,18 +17,19 @@ export const openSourceLibs: IconDetails[] = [
     svg: 'tailwindcss',
   },
   {
-    name: 'Jest',
-    link: 'https://jestjs.io/',
-    svg: 'jest',
-  },
-  {
     name: 'Typescript',
     link: 'https://typescriptlang.org/',
     svg: 'typescript',
   },
   {
     name: 'GitHub',
-    link: 'https://www.github.com/',
+    link: 'https://github.com/',
     svg: 'github',
+  },
+  {
+    name: 'GitHub - Primer Style',
+    link: 'https://primer.style/',
+    svg: 'github',
+    color: 'text-blue-400',
   },
 ];

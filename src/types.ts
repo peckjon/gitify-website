@@ -28,6 +28,7 @@ export interface IconDetails {
   name: string;
   link: string;
   svg: string;
+  color?: string;
 }
 
 // GitHub API types

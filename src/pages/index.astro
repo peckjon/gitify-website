@@ -12,34 +12,50 @@ import SectionRow from "~/layouts/SectionRow.astro";
     <Hero />
 
     <SectionRow
-      title="All your GitHub notifications on your desktop. Nice & Easy."
-      description="<p>Ever got lost with GitHub notifications? Too many emails?</p><br /><p>Gitify is all about making your life easier. Sitting on your menu bar, it informs you for any GitHub notifications without being annoying and of course without adverts. It just gets the job done.</p><br /><p>Works with GitHub Cloud and GitHub Enterprise Server. You can even connect multiple accounts.</p>"
+      title="All your GitHub notifications, right on your desktop."
+      description="<p>Gitify is all about making your life easier.</p><br /><p>Always visible on your menu bar, Gitify delivers real-time notifications across all your GitHub Cloud or GitHub Enterprise accounts.</p><br /><p>Stay on top of your work, effortlessly.</p>"
       screenshot={{
         path: "all-read",
         alt: "Screenshot when there are no notifications read",
       }}
+      isReversed
+      isDark
     />
 
     <SectionRow
-      title="It's about your preferences."
-      description="<p>Gitify will notify you every time you receive a notification by playing a sound (not an annoying one - it's a promise), showing native mac OS notifications or by just turning its tray icon to green.</p><br /><p>It is not there to interupt your workflow or distract you, you can customize your settings to your preference.</p>"
+      title="Cut through the noise, focus on what matters."
+      description="<p>Inbox overflowing?</p><br /><p>Gitify helps you filter notifications so you can quickly zero in on what’s important.</p>"
+      screenshot={{
+        path: "filters",
+        alt: "Screenshot for notification filters",
+      }}
+    />
+
+    <SectionRow
+      title="Your notifications, your way."
+      description="<p>Gitify gives you full control: show native OS notifications, play a new notification sound (we promise it's not annoying), or change it's appearance.</p><br /><p>It’s designed to keep you informed without interrupting your workflow. Customize it to suit your style.</p>"
       screenshot={{
         path: "settings",
-        alt: "Your Preferences, Settings",
+        alt: "Screenshot for user preferences, settings",
       }}
-      isDark
       isReversed
+      isDark
     />
 
     <SectionRow
       title="Free & Open Source. It's ours."
-      description="Gitify is based on Electron, React, Tailwind CSS and more awesome open source libraries. Written in Typescript."
+      description="Gitify is based on Electron, React, Tailwind CSS and more awesome open source libraries.</p><br /><p>Written in Typescript.</p>"
     >
       <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
         {
           openSourceLibs.map((item) => (
-            <div class="hover:bg-gitify-icon-hover p-2 m-2 rounded-lg">
-              <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <div class="p-2 m-2 rounded-lg hover:motion-preset-pulse hover:motion-duration-1000">
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class:list={["icon", item.color ?? "text-black"]}
+              >
                 <Icon
                   name={item.svg}
                   title={item.name}
